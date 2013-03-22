@@ -3,11 +3,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" >
     <head>
-    <title>Valida Inscrição</title>
-
+    <title>Bom Retiro de Inverno -  No Limite da Graça</title>
     	<meta content='pt' http-equiv='content-language'/>
     	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <link rel="STYLESHEET" type="text/css" href="../css/global.css" />
+        
     </head>
     
     <body>
@@ -134,7 +136,17 @@
         	
         	DesconectarBanco();
 
-            // envia email para as pessoas que estão resonsáveis pela inscrição
+            <div id="content">
+                Auguto, seu cadastro foi feito com sucesso, agora só falta dar continuidade ao pagamento.
+                Faça seu depósito ou transferência para essa conta: HSBC Ag. 0054-0 Cc. 08874-71 CNPJ. 79.080.602/0039-29 e envie um comprovante para: muri.o.alves[at]gmail.com
+
+                Efetue o pagamento e garanta a sua vaga, os pagamentos serão recebidos até o dia 13 de julho.
+
+                Veja aqui o que você precisa levar para o acampamento.    
+            </div>  
+
+
+            // EMAIL PARA OS RESPONSÁVEIS
 
             // corpo da mensagem
             $formcontent = "Nome do inscrito: $inscrito->getNome $inscrito->getSobrenome \n Celular: $inscrito->getCelular \n Telefone: $inscrito->getTelefone \n  Forma de pagamento:??";
@@ -146,6 +158,21 @@
             $mailheader = "From: $inscrito->getEmail \r\n";
             // método do PHP para enviar o email
             mail($recipient, $subject, $formcontent, $mailheader) or die("Error!"); 
+
+            // EMAIL PARA O INSCRITO
+
+            // corpo da mensagem
+            $formcontent = "teste";
+            // destinatário
+            $recipient = $inscrito->getEmail;
+            // assunto
+            $subject = "Bom Retiro de Inverno - Inscrição"; 
+            // remetente
+            $mailheader = "From: Jovens Bom Retiro <bomret.jovens@gmail.com>\r\n";      
+            // cabeçalho do email
+            $mailheader .= "MIME-Version: 1.0\r\n";
+            $mailheader .= "Content-Type: text/html; charset=UTF-8\r\n";
+            mail($recipient, $subject, $content, $mailheader) or die("Error!");
         ?>
     </body>
 </html>

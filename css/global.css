@@ -37,6 +37,13 @@ body
 	*/
 }
 
+hr
+{
+	margin-bottom: 25px;
+	margin-top: 25px;
+	border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
 h1
 {
 	font-size: 2.2em;
@@ -65,4 +72,8 @@ a:hover
 	text-decoration: none;	
 }
 
+.center
+{	
+	text-align: center;
+}
 

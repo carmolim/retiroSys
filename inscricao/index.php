@@ -1,9 +1,10 @@
 <?php require_once("conectarBD.php");?>
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml" >
 	
 	<head>
-	<title>Bom Retiro de Inverno 2013</title>
+		<title>Bom Retiro de Inverno -  No Limite da Graça</title>
 		<meta content='pt' http-equiv='content-language'/>
 		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
