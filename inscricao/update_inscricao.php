@@ -142,11 +142,8 @@
 
     echo $inscrito->getId_pessoa();
 
-<<<<<<< HEAD
     $query = "SELECT * FROM Pessoa WHERE id_pessoa = ".$inscrito->getId_pessoa();
-=======
-    $query = "SELECT * FROM Pessoa WHERE id_pessoa = '$inscrito->getId_pessoa()'";
->>>>>>> 6939bc006682b5ee2a53d2b107c8f9b580c31e7d
+
 
     $result = mysql_fetch_assoc(mysql_query($query)) or die("Nao foi possivel executar a QUERY");
 
@@ -438,6 +435,6 @@
 
             <br>
                 <input type="submit" value="Atualizar">
-                    </form>
-                    </div>
-                    </html>
+        </form>
+    </div>
+</html>

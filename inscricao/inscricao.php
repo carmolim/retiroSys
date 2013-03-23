@@ -61,6 +61,12 @@
 					{
 						required: true,
 						email: true
+					},
+					email_conf:
+					{
+						required: true,
+						email: true,
+						equalTo: "#email"
 					},	
 					senha:
 					{
@@ -103,6 +109,12 @@
 					{
 						required: 	" <br />É necessário informar um e-mail",
 						email: 		" <br />Informe um e-mail válido"
+					},
+					email_conf: 
+					{
+						required: 	" <br />É necessário confirmar seu e-mail",
+						email: 		" <br />Informe um e-mail válido",
+						equalTo: 	" <br />Informe o mesmo e-mail informado anteriormente"
 					},		
 					senha:
 					{
@@ -159,6 +171,10 @@
 					<tr>
 					  <td><label for="email">E-mail</label></td>
 					  <td><input id="email" name="email" type="text" class="required" /></td>
+					</tr>
+					<tr>
+					  <td><label for="email_conf">Confirme o E-mail</label></td>
+					  <td><input id="email_conf" name="email_conf" type="text" class="required" /></td>
 					</tr>
 					<tr>
 					  <td><label for="senha">Senha</label></td>
@@ -373,316 +389,178 @@
 				</table>
 			</fieldset>
 			<br>
-			<input type="submit" value="Enviar">
+			<input type="submit" name="submit" value="Enviar">
 		</form>
 		</div>
 	<?php
-            ConectarBanco();
-<<<<<<< HEAD
-            if(isset($_POST['submit'])) 
-	    { 
-                include("Pessoa.php");
+		ConectarBanco();
+		if(isset($_POST['submit'])) 
+		{
+			ConectarBanco();
 
-                $inscrito = new Pessoa();
+			$query = "SELECT email FROM Pessoa WHERE email = '".$_POST["email"]."'";
 
-                /*
-                    em que fazer a verificação do email para ver se ele já não foi cadastrado
-                    no do ano passado foi feito assim:
-
-                    $sql = "SELECT id_inscricao, email FROM inscricao WHERE email = '".$_POST['email']."'";
-                    $result = mysql_query($sql);
-                    $existe = (mysql_num_rows($result) > 0);
+			if (mysql_num_rows(mysql_query($query)) > 0)
+			{
+				echo "<script>window.open(\"email_existe.php\",'_self')</script>";	
+			}
+			else
+			{	
 
 
-                     // se o email ainda não foi cadastrado...  
-                    if (!$existe)
-                    {}
-                */                    
+	            $inscrito = new Pessoa();
+
+	            /*
+	                em que fazer a verificação do email para ver se ele já não foi cadastrado
+	                no do ano passado foi feito assim:
+
+	                $sql = "SELECT id_inscricao, email FROM inscricao WHERE email = '".$_POST['email']."'";
+	                $result = mysql_query($sql);
+	                $existe = (mysql_num_rows($result) > 0);
+	        
+	            
+	                 // se o email ainda não foi cadastrado...  
+	                if (!$existe)
+	                {}
+	            */                    
 
 
-                // identificação
-                ////////////////   
-                $inscrito->setNome($_POST["fname"]);
-                $inscrito->setSobrenome($_POST["lname"]); 
-                $inscrito->setEmail($_POST["email"]);  
-                $inscrito->setSenha($_POST["senha"]);                   
-                $inscrito->setSexo($_POST["sexo"]);                        
-                $inscrito->setDiaNasc($_POST["dianasc"]);             
-                $inscrito->setMesNasc($_POST["mesnasc"]);             
-                $inscrito->setAnoNasc($_POST["anonasc"]);  
-                $inscrito->setRG($_POST["rg"]); 
-                $inscrito->setCPF($_POST["cpf"]);             
+	            // identificação
+	            ////////////////   
+	            $inscrito->setNome($_POST["fname"]);
+	            $inscrito->setSobrenome($_POST["lname"]); 
+	            $inscrito->setEmail($_POST["email"]);  
+	            $inscrito->setSenha($_POST["senha"]);                   
+	            $inscrito->setSexo($_POST["sexo"]);                        
+	            $inscrito->setDiaNasc($_POST["dianasc"]);             
+	            $inscrito->setMesNasc($_POST["mesnasc"]);             
+	            $inscrito->setAnoNasc($_POST["anonasc"]);  
+	            $inscrito->setRG($_POST["rg"]); 
+	            $inscrito->setCPF($_POST["cpf"]);             
 
-                printf("Nome: %s <br>",$inscrito->getNome());
-                printf("Sobrenome: %s <br>",$inscrito->getSobrenome()); 
-                printf("E-mail: %s <br>", $inscrito->getEmail()); 
-                printf("Senha: %d <br>",$inscrito->getSenha()); 
-                printf("Sexo: %s <br>",$inscrito->getSexo()); 
-                printf("Data de Nascimento: %d/%d/%d <br>",$inscrito->getDiaNasc(),$inscrito->getMesNasc(),$inscrito->getAnoNasc()); 
-                printf("RG: %s <br>",$inscrito->getRG()); 
-                printf("CPF: %s <br>",$inscrito->getCPF()); 
-                ////////////////////
-
-
-                //Outras informações
-                ////////////////////
-                $inscrito->setCelular($_POST["celular"]);
-                $inscrito->setTelefone($_POST["telefone"]);
-                $inscrito->setProfissao($_POST["profissao"]);
-                $inscrito->setEstadoCivil($_POST["estado_civil"]);
-                $inscrito->setCidade($_POST["cidade"]);
-                $inscrito->setEstado($_POST["estado"]);
-                $inscrito->setAdventista($_POST["adventista"]);
-                $inscrito->setIgreja($_POST["igreja"]);
-
-                printf("Celular: %s<br>",$inscrito->getCelular());
-                printf("Telefone: %s<br>",$inscrito->getTelefone());
-                printf("Profissão: %s<br>",$inscrito->getProfissao());
-                printf("Estado Civil: %s<br>",$inscrito->getEstadoCivil());
-                printf("Cidade: %s<br>",$inscrito->getCidade());
-                printf("Estado: %s<br>",$inscrito->getEstado());
-                printf("Adventista?: %s<br>",$inscrito->getAdventista());
-                printf("Igreja: %s<br>",$inscrito->getIgreja());
-                ////////////////////
-
-                //saúde
-                ///////
-                $inscrito->setContatoEmergencia($_POST["emergencia_contato"]);
-                $inscrito->setTelefoneContato($_POST["emergencia_telefone"]);
-                $inscrito->setDoenca($_POST["doenca"]);
-                $inscrito->setAlergia($_POST["alergia"]);
-                $inscrito->setCuidado($_POST["cuidado_especial"]);
-
-                printf("Contato de Emergência: %s<br>",$inscrito->getContatoEmergencia());
-                printf("Telefone do Contato: %s<br>",$inscrito->getTelefoneContato());
-                printf("Doenca: %s<br>",$inscrito->getDoenca());
-                printf("Alergia: %s<br>",$inscrito->getAlergia());
-                printf("Cuidados Especiais: %s<br>",$inscrito->getCuidado());
-                ///////
-                // locomoção
-                $inscrito->setPrecisaCarona($_POST["precisa_carona"]);
-                $inscrito->setVagas($_POST["vagas"]);
-                //hora de saida
-                ////////////
-
-                $query = "INSERT INTO Pessoa VALUES (".
-                                            "'',".
-                                            "'".mysql_real_escape_string($inscrito->getNome($_POST["fname"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getSobrenome($_POST["lname"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getEmail($_POST["email"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getSenha($_POST["senha"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getSexo($_POST["sexo"]))."',".
-                                                mysql_real_escape_string($inscrito->getDiaNasc($_POST["dianasc"])).",".
-                                                mysql_real_escape_string($inscrito->getMesNasc($_POST["mesnasc"])).",".
-                                                mysql_real_escape_string($inscrito->getAnoNasc($_POST["anonasc"])).",".
-                                            "'".mysql_real_escape_string($inscrito->getRG($_POST["rg"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getCPF($_POST["cpf"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getCelular($_POST["celular"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getTelefone($_POST["telefone"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getProfissao($_POST["profissao"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getEstadoCivil($_POST["estado_civil"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getCidade($_POST["cidade"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getEstado($_POST["estado"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getAdventista($_POST["adventista"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getIgreja($_POST["igreja"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getContatoEmergencia($_POST["emergencia_contato"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getTelefoneContato($_POST["emergencia_telefone"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getDoenca($_POST["doenca"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getAlergia($_POST["alergia"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getCuidado($_POST["cuidado_especial"]))."',".
-                                            "'".mysql_real_escape_string($inscrito->getPrecisaCarona($_POST["precisa_carona"]))."',".
-                                                mysql_real_escape_string($inscrito->getVagas($_POST["vagas"])).",".
-                                            "'',".
-                                            "0)";
-                    echo $query;
-
-                    @mysql_query($query) or die  ("Nao foi possivel executar a QUERY");
-
-                    DesconectarBanco();
+	            printf("Nome: %s <br>",$inscrito->getNome());
+	            printf("Sobrenome: %s <br>",$inscrito->getSobrenome()); 
+	            printf("E-mail: %s <br>", $inscrito->getEmail()); 
+	            printf("Senha: %d <br>",$inscrito->getSenha()); 
+	            printf("Sexo: %s <br>",$inscrito->getSexo()); 
+	            printf("Data de Nascimento: %d/%d/%d <br>",$inscrito->getDiaNasc(),$inscrito->getMesNasc(),$inscrito->getAnoNasc()); 
+	            printf("RG: %s <br>",$inscrito->getRG()); 
+	            printf("CPF: %s <br>",$inscrito->getCPF()); 
+	            ////////////////////
 
 
-                // EMAIL PARA OS RESPONSÁVEIS
+	            //Outras informações
+	            ////////////////////
+	            $inscrito->setCelular($_POST["celular"]);
+	            $inscrito->setTelefone($_POST["telefone"]);
+	            $inscrito->setProfissao($_POST["profissao"]);
+	            $inscrito->setEstadoCivil($_POST["estado_civil"]);
+	            $inscrito->setCidade($_POST["cidade"]);
+	            $inscrito->setEstado($_POST["estado"]);
+	            $inscrito->setAdventista($_POST["adventista"]);
+	            $inscrito->setIgreja($_POST["igreja"]);
 
-                // corpo da mensagem
-                $formcontent = "Nome do inscrito: $inscrito->getNome() $inscrito->getSobrenome() \n Celular: $inscrito->getCelular() \n Telefone: $inscrito->getTelefone() \n  Forma de pagamento:??";
-                // pessoas que não receber os emails
-                $recipient = "carmolim@gmail.com, muri.o.alves@gmail.com, kaminskao@hotmail.com, lu.degraf@hotmail.com, jonatashille@gmail.com";
-                // assunto do email
-                $subject = "Mais um inscrito...";
-                //cabeçalho do email
-                $mailheader = "From: ".$inscrito->getEmail();
-                // método do PHP para enviar o email
-                mail($recipient, $subject, $formcontent, $mailheader) or die("Erro no envio para os responsáveis"); 
+	            printf("Celular: %s<br>",$inscrito->getCelular());
+	            printf("Telefone: %s<br>",$inscrito->getTelefone());
+	            printf("Profissão: %s<br>",$inscrito->getProfissao());
+	            printf("Estado Civil: %s<br>",$inscrito->getEstadoCivil());
+	            printf("Cidade: %s<br>",$inscrito->getCidade());
+	            printf("Estado: %s<br>",$inscrito->getEstado());
+	            printf("Adventista?: %s<br>",$inscrito->getAdventista());
+	            printf("Igreja: %s<br>",$inscrito->getIgreja());
+	            ////////////////////
+	        	
+	            //saúde
+	            ///////
+	            $inscrito->setContatoEmergencia($_POST["emergencia_contato"]);
+	            $inscrito->setTelefoneContato($_POST["emergencia_telefone"]);
+	            $inscrito->setDoenca($_POST["doenca"]);
+	            $inscrito->setAlergia($_POST["alergia"]);
+	            $inscrito->setCuidado($_POST["cuidado_especial"]);
 
-
-                // EMAIL PARA O INSCRITO
-
-                // corpo da mensagem
-                $formcontent = "teste";
-                // destinatário
-                $recipient = $inscrito->getEmail();
-                // assunto
-                $subject = "Bom Retiro de Inverno - Inscrição"; 
-                // remetente
-                $mailheader = "From: Jovens Bom Retiro <bomret.jovens@gmail.com>\r\n";      
-                // cabeçalho do email
-                $mailheader .= "MIME-Version: 1.0\r\n";
-                $mailheader .= "Content-Type: text/html; charset=UTF-8\r\n";
-                mail($recipient, $subject, $content, $mailheader) or die("Erro no envio para o inscrito");
-            }
-        ?>
-=======
-
-            include("Pessoa.php");
-
-            $inscrito = new Pessoa();
-
-            /*
-                em que fazer a verificação do email para ver se ele já não foi cadastrado
-                no do ano passado foi feito assim:
-
-                $sql = "SELECT id_inscricao, email FROM inscricao WHERE email = '".$_POST['email']."'";
-                $result = mysql_query($sql);
-                $existe = (mysql_num_rows($result) > 0);
-        
-            
-                 // se o email ainda não foi cadastrado...  
-                if (!$existe)
-                {}
-            */                    
-
-
-            // identificação
-            ////////////////   
-            $inscrito->setNome($_POST["fname"]);
-            $inscrito->setSobrenome($_POST["lname"]); 
-            $inscrito->setEmail($_POST["email"]);  
-            $inscrito->setSenha($_POST["senha"]);                   
-            $inscrito->setSexo($_POST["sexo"]);                        
-            $inscrito->setDiaNasc($_POST["dianasc"]);             
-            $inscrito->setMesNasc($_POST["mesnasc"]);             
-            $inscrito->setAnoNasc($_POST["anonasc"]);  
-            $inscrito->setRG($_POST["rg"]); 
-            $inscrito->setCPF($_POST["cpf"]);             
-
-            printf("Nome: %s <br>",$inscrito->getNome());
-            printf("Sobrenome: %s <br>",$inscrito->getSobrenome()); 
-            printf("E-mail: %s <br>", $inscrito->getEmail()); 
-            printf("Senha: %d <br>",$inscrito->getSenha()); 
-            printf("Sexo: %s <br>",$inscrito->getSexo()); 
-            printf("Data de Nascimento: %d/%d/%d <br>",$inscrito->getDiaNasc(),$inscrito->getMesNasc(),$inscrito->getAnoNasc()); 
-            printf("RG: %s <br>",$inscrito->getRG()); 
-            printf("CPF: %s <br>",$inscrito->getCPF()); 
-            ////////////////////
-
-
-            //Outras informações
-            ////////////////////
-            $inscrito->setCelular($_POST["celular"]);
-            $inscrito->setTelefone($_POST["telefone"]);
-            $inscrito->setProfissao($_POST["profissao"]);
-            $inscrito->setEstadoCivil($_POST["estado_civil"]);
-            $inscrito->setCidade($_POST["cidade"]);
-            $inscrito->setEstado($_POST["estado"]);
-            $inscrito->setAdventista($_POST["adventista"]);
-            $inscrito->setIgreja($_POST["igreja"]);
-
-            printf("Celular: %s<br>",$inscrito->getCelular());
-            printf("Telefone: %s<br>",$inscrito->getTelefone());
-            printf("Profissão: %s<br>",$inscrito->getProfissao());
-            printf("Estado Civil: %s<br>",$inscrito->getEstadoCivil());
-            printf("Cidade: %s<br>",$inscrito->getCidade());
-            printf("Estado: %s<br>",$inscrito->getEstado());
-            printf("Adventista?: %s<br>",$inscrito->getAdventista());
-            printf("Igreja: %s<br>",$inscrito->getIgreja());
-            ////////////////////
-        	
-            //saúde
-            ///////
-            $inscrito->setContatoEmergencia($_POST["emergencia_contato"]);
-            $inscrito->setTelefoneContato($_POST["emergencia_telefone"]);
-            $inscrito->setDoenca($_POST["doenca"]);
-            $inscrito->setAlergia($_POST["alergia"]);
-            $inscrito->setCuidado($_POST["cuidado_especial"]);
-
-            printf("Contato de Emergência: %s<br>",$inscrito->getContatoEmergencia());
-            printf("Telefone do Contato: %s<br>",$inscrito->getTelefoneContato());
-            printf("Doenca: %s<br>",$inscrito->getDoenca());
-            printf("Alergia: %s<br>",$inscrito->getAlergia());
-            printf("Cuidados Especiais: %s<br>",$inscrito->getCuidado());
-            ///////
-            // locomoção
-            $inscrito->setPrecisaCarona($_POST["precisa_carona"]);
-            $inscrito->setVagas($_POST["vagas"]);
-            //hora de saida
-            ////////////
-        	
-            $query = "INSERT INTO Pessoa VALUES (".
-        				"'',".
-        				"'".mysql_real_escape_string($inscrito->getNome($_POST["fname"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getSobrenome($_POST["lname"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getEmail($_POST["email"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getSenha($_POST["senha"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getSexo($_POST["sexo"]))."',".
-        				    mysql_real_escape_string($inscrito->getDiaNasc($_POST["dianasc"])).",".
-        				    mysql_real_escape_string($inscrito->getMesNasc($_POST["mesnasc"])).",".
-        				    mysql_real_escape_string($inscrito->getAnoNasc($_POST["anonasc"])).",".
-        				"'".mysql_real_escape_string($inscrito->getRG($_POST["rg"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getCPF($_POST["cpf"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getCelular($_POST["celular"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getTelefone($_POST["telefone"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getProfissao($_POST["profissao"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getEstadoCivil($_POST["estado_civil"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getCidade($_POST["cidade"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getEstado($_POST["estado"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getAdventista($_POST["adventista"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getIgreja($_POST["igreja"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getContatoEmergencia($_POST["emergencia_contato"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getTelefoneContato($_POST["emergencia_telefone"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getDoenca($_POST["doenca"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getAlergia($_POST["alergia"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getCuidado($_POST["cuidado_especial"]))."',".
-        				"'".mysql_real_escape_string($inscrito->getPrecisaCarona($_POST["precisa_carona"]))."',".
-        				    mysql_real_escape_string($inscrito->getVagas($_POST["vagas"])).",".
-        				"'',".
-        				"0)";
-        	echo $query;
-        				
-        	@mysql_query($query) or die  ("Nao foi possivel executar a QUERY");
-        	
-        	DesconectarBanco();
+	            printf("Contato de Emergência: %s<br>",$inscrito->getContatoEmergencia());
+	            printf("Telefone do Contato: %s<br>",$inscrito->getTelefoneContato());
+	            printf("Doenca: %s<br>",$inscrito->getDoenca());
+	            printf("Alergia: %s<br>",$inscrito->getAlergia());
+	            printf("Cuidados Especiais: %s<br>",$inscrito->getCuidado());
+	            ///////
+	            // locomoção
+	            $inscrito->setPrecisaCarona($_POST["precisa_carona"]);
+	            $inscrito->setVagas($_POST["vagas"]);
+	            //hora de saida
+	            ////////////
+	        	
+	            $query = "INSERT INTO Pessoa VALUES (".
+	        				"'',".
+	        				"'".mysql_real_escape_string($inscrito->getNome($_POST["fname"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getSobrenome($_POST["lname"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getEmail($_POST["email"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getSenha($_POST["senha"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getSexo($_POST["sexo"]))."',".
+	        				    mysql_real_escape_string($inscrito->getDiaNasc($_POST["dianasc"])).",".
+	        				    mysql_real_escape_string($inscrito->getMesNasc($_POST["mesnasc"])).",".
+	        				    mysql_real_escape_string($inscrito->getAnoNasc($_POST["anonasc"])).",".
+	        				"'".mysql_real_escape_string($inscrito->getRG($_POST["rg"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getCPF($_POST["cpf"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getCelular($_POST["celular"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getTelefone($_POST["telefone"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getProfissao($_POST["profissao"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getEstadoCivil($_POST["estado_civil"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getCidade($_POST["cidade"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getEstado($_POST["estado"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getAdventista($_POST["adventista"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getIgreja($_POST["igreja"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getContatoEmergencia($_POST["emergencia_contato"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getTelefoneContato($_POST["emergencia_telefone"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getDoenca($_POST["doenca"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getAlergia($_POST["alergia"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getCuidado($_POST["cuidado_especial"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getPrecisaCarona($_POST["precisa_carona"]))."',".
+	        				    mysql_real_escape_string($inscrito->getVagas($_POST["vagas"])).",".
+	        				"'',".
+	        				"0)";
+	        	echo $query;
+	        				
+	        	mysql_query($query) or die  ("\nNao foi possivel executar a QUERY");
+	        	
+	        	DesconectarBanco();
 
 
-            // EMAIL PARA OS RESPONSÁVEIS
+	            // EMAIL PARA OS RESPONSÁVEIS
 
-            // corpo da mensagem
-            $formcontent = "Nome do inscrito: $inscrito->getNome() $inscrito->getSobrenome() \n Celular: $inscrito->getCelular() \n Telefone: $inscrito->getTelefone() \n  Forma de pagamento:??";
-            // pessoas que não receber os emails
-            $recipient = "carmolim@gmail.com, muri.o.alves@gmail.com, kaminskao@hotmail.com, lu.degraf@hotmail.com, jonatashille@gmail.com";
-            // assunto do email
-            $subject = "Mais um inscrito...";
-            //cabeçalho do email
-            $mailheader = "From: ".$inscrito->getEmail();
-            // método do PHP para enviar o email
-            mail($recipient, $subject, $formcontent, $mailheader) or die("Erro no envio para os responsáveis"); 
-            
+	            // corpo da mensagem
+	            $formcontent = "Nome do inscrito: ".$inscrito->getNome()." ".$inscrito->getSobrenome()." \n Celular: ".$inscrito->getCelular()." \n Telefone: ".$inscrito->getTelefone()." \n  Forma de pagamento:??";
+	            echo $formcontent;
+	            // pessoas que não receber os emails
+	            $recipient = "carmolim@gmail.com, jonatashille@gmail.com";
+	            // assunto do email
+	            $subject = "Mais um inscrito...";
+	            //cabeçalho do email
+	            $mailheader = "From: ".$inscrito->getEmail();
+	            // método do PHP para enviar o email
+	            mail($recipient, $subject, $formcontent, $mailheader) or die("Erro no envio para os responsáveis"); 
+	            
 
-            // EMAIL PARA O INSCRITO
+	            // EMAIL PARA O INSCRITO
 
-            // corpo da mensagem
-            $formcontent = "teste";
-            // destinatário
-            $recipient = $inscrito->getEmail();
-            // assunto
-            $subject = "Bom Retiro de Inverno - Inscrição"; 
-            // remetente
-            $mailheader = "From: Jovens Bom Retiro <bomret.jovens@gmail.com>\r\n";      
-            // cabeçalho do email
-            $mailheader .= "MIME-Version: 1.0\r\n";
-            $mailheader .= "Content-Type: text/html; charset=UTF-8\r\n";
-            mail($recipient, $subject, $content, $mailheader) or die("Erro no envio para o inscrito");
+	            // corpo da mensagem
+	            $formcontent = "teste";
+	            // destinatário
+	            $recipient = $inscrito->getEmail();
+	            // assunto
+	            $subject = "Bom Retiro de Inverno - Inscrição"; 
+	            // remetente
+	            $mailheader = "From: Jovens Bom Retiro <bomret.jovens@gmail.com>\r\n";      
+	            // cabeçalho do email
+	            $mailheader .= "MIME-Version: 1.0\r\n";
+	            $mailheader .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+	            mail($recipient, $subject, $formcontent, $mailheader) or die("Erro no envio para o inscrito");
+
+	            echo "<script>window.open(\"inscrito_sucesso.php\",'_self')</script>"; 
+	        }
+        }
 	?>
->>>>>>> 6939bc006682b5ee2a53d2b107c8f9b580c31e7d
 	</body>
 
 </html>
