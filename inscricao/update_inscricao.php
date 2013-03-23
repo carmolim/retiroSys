@@ -144,7 +144,6 @@
 
     $query = "SELECT * FROM Pessoa WHERE id_pessoa = ".$inscrito->getId_pessoa();
 
-
     $result = mysql_fetch_assoc(mysql_query($query)) or die("Nao foi possivel executar a QUERY");
 
     // identificação
