@@ -1,0 +1,71 @@
+#update input[type="text"],#update textarea,
+#update input[type="password"]
+{
+  font-family : Arial, Verdana, sans-serif;
+  font-size: 0.8em;
+  line-height:140%;
+  color : #000; 
+  padding : 3px; 
+  border : 1px solid #999;
+  height:18px;
+  width:220px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#update input[class="required"]
+{
+  border-left: 3px solid #b20018;
+}
+
+#update input[readonly]
+{
+    border: none;
+}
+
+#update .container
+{
+   margin-top:8px;
+   margin-bottom: 10px;
+}
+#update input[type="submit"]
+{
+   width:100px;
+   height:30px;
+   padding-left:0px;
+}
+
+#update label
+{
+   font-family : Arial, sans-serif;
+   font-size:0.8em;
+   font-weight: bold;
+}
+
+#update fieldset
+{
+	width: 500px;
+	padding:20px;
+	border:1px solid #ccc;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	border-radius: 10px; 
+}
+
+#update legend
+{
+   font-family : Arial, sans-serif;
+   font-size: 1.3em;
+   font-weight:bold;
+   color:#333;
+}
+
+#update select[class="required"] {
+border-left: 3px solid #b20018;
+	border-bottom-style: none;
+	border-right-style: none;
+	border-top-style: none;
+}

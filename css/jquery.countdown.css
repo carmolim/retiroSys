@@ -1,0 +1,133 @@
+#content	
+{
+	width:730px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#logo
+{
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+#text
+{
+	text-align: center;
+	margin-bottom: 80px;
+}
+
+.center
+{
+	margin-top: 150px;
+	text-align: center;
+}
+
+
+/* jQuery Countdown styles 1.6.1. */
+////////////////////////////////////////////
+
+#defaultCountdown
+{
+	width: 680px;
+	height: 100px;
+	//background-color: #f11717;
+	margin-left: 26px;
+}
+
+
+.hasCountdown
+{
+	font-family: 'Josefin Slab', sans-serif;
+}
+
+.countdown_rtl
+{
+	direction: rtl;
+	
+}
+.countdown_holding span
+{
+	color: #888;
+}
+.countdown_row
+{
+	clear: both;
+	width: 100%;
+	padding: 0px 2px;
+	text-align: center;
+	
+}
+
+.countdown_show1 .countdown_section
+{
+	width: 98%;
+	
+}
+.countdown_show2 .countdown_section
+{
+	width: 48%;
+	
+	
+}
+
+.countdown_show3 .countdown_section
+{
+	width: 32.5%;
+	
+}
+
+.countdown_show4 .countdown_section
+{
+	width: 24.5%;
+	
+	
+}
+
+.countdown_show5 .countdown_section
+{
+	width: 19.5%;
+	//background-color: #fff;
+
+}
+
+.countdown_show6 .countdown_section
+{
+	//width: 16.25%;
+	
+}
+
+.countdown_show7 .countdown_section
+{
+	//width: 14%;
+	
+}
+
+.countdown_section
+{
+	display: block;
+	float: left;
+	font-size: 150%;
+	text-align: center;
+	
+	//background-color: #ccc;
+	//margin: 3px;
+	
+	//padding-top: 10px;
+	//padding-bottom: 10px;
+	
+	//-moz-border-radius: 20px;
+	//border-radius: 20px;	
+}
+
+.countdown_amount
+{
+	font-size: 200%;
+	
+}
+
+.countdown_descr
+{
+	display: block;
+	width: 100%;
+}
