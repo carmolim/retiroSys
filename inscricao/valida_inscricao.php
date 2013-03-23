@@ -14,7 +14,6 @@
     
     <body>
         <?php
-
             ConectarBanco();
 
             include("Pessoa.php");

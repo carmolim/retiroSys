@@ -1,4 +1,5 @@
-<?php require_once("conectarBD.php");?>
+<?php require_once("conectarBD.php");
+require_once("Pessoa.php");?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
@@ -109,7 +110,10 @@
 	</script>			
 </head>
 <?php
-	ConectarBanco();
+session_start();
+
+
+    ConectarBanco();
 
 	/*$query_senha = "SELECT senha FROM Pessoa WHERE email = '".$_POST["username"]."'";
 	if (@mysql_result(mysql_query($query_senha),0) == $_POST["password"])
@@ -119,10 +123,11 @@
 	
 	$id_pessoa = mysql_result(mysql_query($query_login),0) or die  ("PROBLEMA");*/
 
-    include("Pessoa.php");
-    session_start();
+    //include("Pessoa.php");
     
     $inscrito = $_SESSION['inscrito_obj'];
+    
+    echo $inscrito->getId_pessoa(); 
     
     $query = "SELECT * FROM Pessoa WHERE id_pessoa = ".$inscrito->getId_pessoa();
 				
