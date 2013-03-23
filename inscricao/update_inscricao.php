@@ -97,14 +97,34 @@ require_once("Pessoa.php");
                                                 {
                                                     required: " <br />Precisamos do seu contato"
                                                 },
-                                    }
 
+                                        senha_conf:
+                                        {
+                                                required: 	" <br />Informe a senha novamente",
+                                                minlength: 	" <br />Sua senha deve ter pelo menos 5 caracteres",
+                                                equalTo: 	" <br />Informe a mesma senha informada anteriormente"
+                                        },
+                                        rg:
+                                        {
+                                                required: 	" <br />Informe seu R.G.",
+                                        },
+
+                                        cpf:
+                                        {
+                                                required: 	" <br />Informe seu C.P.F.",
+                                        },
+                                        celular:
+                                        {
+                                                required: 	" <br />Precisamos do seu contato"
+                                        },
+                                }
+
+                          });			 
                         });
-            });
-        </script>			
-    </head>
-    <?php
-    session_start();
+	</script>			
+</head>
+<?php
+@session_start();
 
 
     ConectarBanco();
