@@ -136,15 +136,6 @@
         	
         	DesconectarBanco();
 
-            <div id="content">
-                Auguto, seu cadastro foi feito com sucesso, agora só falta dar continuidade ao pagamento.
-                Faça seu depósito ou transferência para essa conta: HSBC Ag. 0054-0 Cc. 08874-71 CNPJ. 79.080.602/0039-29 e envie um comprovante para: muri.o.alves[at]gmail.com
-
-                Efetue o pagamento e garanta a sua vaga, os pagamentos serão recebidos até o dia 13 de julho.
-
-                Veja aqui o que você precisa levar para o acampamento.    
-            </div>  
-
 
             // EMAIL PARA OS RESPONSÁVEIS
 
@@ -158,6 +149,7 @@
             $mailheader = "From: $inscrito->getEmail \r\n";
             // método do PHP para enviar o email
             mail($recipient, $subject, $formcontent, $mailheader) or die("Error!"); 
+            
 
             // EMAIL PARA O INSCRITO
 
