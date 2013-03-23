@@ -23,10 +23,12 @@
 		<style>		
 			#content
 			{	
-				width: 700px;
+				width: 550px;
 				margin-top: 100px;
 				margin-left: auto;
 				margin-right: auto;
+				padding: 20px;
+				background: rgba(255, 255, 255, .2);
 			}						
 		</style>
 		
@@ -83,6 +85,7 @@
 					{
 						notEqual: "sexo"
 					},
+					
 					rg: "required",
 	
 					cpf: "required",
@@ -253,7 +256,7 @@
 			
 			<fieldset>			
 			<legend>Outras informações</legend>
-			<table width="580" cellpadding="4" cellspacing="10">
+			<table width="560" cellpadding="4" cellspacing="10">
 				<tr>
 					<td width="237"><label for="celular">Celular</label></td>
 					<td width="319"><input id="celular" name="celular" type="text" class="required" /></td>
@@ -338,7 +341,7 @@
 			
 			<fieldset>
 				<legend>Saúde</legend>
-				<table width="580" cellpadding="4" cellspacing="10">
+				<table width="560" cellpadding="4" cellspacing="10">
 				<tr>
 				  <td width="237"><label for="emergencia_contato">Contato para Emergência</label></td>
 				  <td width="319"><input id="emergencia_contato" name="emergencia_contato" type="text" /></td>
@@ -364,7 +367,7 @@
 			
 			<fieldset>			
 				<legend>Transporte</legend>
-				<table width="580" cellpadding="4" cellspacing="10">
+				<table width="560" cellpadding="4" cellspacing="10">
 				<tr>
 				  <td width="237"><label for="precisa_carona">Precisa de Carona?</label></td>
 				  <td width="319">

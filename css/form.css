@@ -5,7 +5,8 @@ fieldset
 
 
 legend
-{
+{	
+	color: white;
 	margin-bottom: 20px;
 	font: 600 2.2em 'Josefin Slab', sans-serif;
 }
@@ -13,12 +14,12 @@ legend
 
 input
 {	
-	color: #fff;
+	color:#283c4f;
 	width: 300px;
 	height: 30px;
 	border: 0px;
 	padding-left: 10px;
-	background: rgb(255, 255, 255); /* Fall-back for browsers that don't support rgba */
+	background: rgb(150, 150, 150); /* Fall-back for browsers that don't support rgba */
 	background: rgba(255, 255, 255, .3);
 }
 
@@ -31,21 +32,21 @@ input[type=radio]
 
 select
 {
-	color: #fff;
+	color:#283c4f;
 	height:25px;
 	border: 0px;
 	padding-left: 10px;
-	background: rgb(255, 255, 255); /* Fall-back for browsers that don't support rgba */
+	background: rgb(150, 150, 150); /* Fall-back for browsers that don't support rgba */
 	background: rgba(255, 255, 255, .3);
 	
 }
 
 .required
 {
-	color: #fff;
+	color:#283c4f;
 	border: 0px;
 	padding-left: 10px;
-	background: rgb(255, 255, 255); /* Fall-back for browsers that don't support rgba */
+	background: rgb(150, 150, 150); /* Fall-back for browsers that don't support rgba */
 	background: rgba(255, 255, 255, .3);
 	border-left: 3px solid #335177;
 }
