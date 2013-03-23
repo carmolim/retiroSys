@@ -22,9 +22,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
 		
 		<link rel="STYLESHEET" type="text/css" href="../css/global.css" />
+		<link rel="STYLESHEET" type="text/css" href="../css/form.css" />
 		
-		<style>
-		
+		<style>		
 			#content
 			{	
 				width: 565px;
@@ -42,7 +42,6 @@
 				background: rgb(255, 255, 255);
 				background: rgba(255, 255, 255, .2);
 				padding: 20px;
-			}
-			
+			}			
 		</style>	
 	</head>
