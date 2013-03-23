@@ -1,5 +1,11 @@
-<?php $titulo = 'Esqueci minha senha'; ?>
-<?php require_once('topo.php'); ?>
+<?php
+	$titulo = 'Esqueci minha senha'; 
+	require_once('topo.php');
+
+	/*
+		fazer a validação do email
+	*/
+?>
 
 	<body>
 		<div id="content">
@@ -10,13 +16,13 @@
 			</div>	
 			<div id="box">
 				<h1> Recuperação de senha</h1>
-
-
+				<br>
 				Digite o seu e-mail para enviarmos uma nova senha:
 				<br>
 				<br>
 				<form id="InscricaoForm" action="reset_senha.php" method="post" name="InscricaoForm">
-					<label for="email">E-mail</label>
+					E-mail:
+					<br>
 					<input id="email" name="email" type="text" class="required" />
 					<br>
 					<br>

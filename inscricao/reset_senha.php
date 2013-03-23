@@ -1,4 +1,7 @@
-
+<?php
+	require_once("conectarBD.php");
+	require_once("Pessoa.php");
+?>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -39,34 +42,23 @@
 
 		<?php
 
-			/*
-				aqui tem que receber o email do formulário
-				verificar o se o email está no banco de dados
-				
-				se estiver no banco de dados
+			ConectarBanco();
+		 	
+		 	$inscrito = new Pessoa();
+			
+			$recebeEmail = $_POST["email"];		
+    		
+    		$query = "SELECT * FROM Pessoa WHERE email = '$recebeEmail'";    		
 
-					$email = true;
+   			$result = mysql_fetch_assoc(mysql_query($query)) /*or die ("Nao foi possivel executar a QUERY")*/; 
 
-				se não estiverno banco de dados
-				
-					$email = false;
-			*/
+   			$existe = (mysql_num_rows($result) > 0);
 
+   			$inscrito->setId_pessoa($result["id_pessoa"]);
+   			$inscrito->setNome($result["nome"]);
+   			$inscrito->setEmail($result["email"]);
 
-            
-            /*
-                em que fazer a verificação do email para ver se ele já não foi cadastrado
-                no do ano passado foi feito assim:
-
-                $sql = "SELECT id_inscricao, email FROM inscricao WHERE email = '".$_POST['email']."'";
-                $result = mysql_query($sql);
-                $existe = (mysql_num_rows($result) > 0);
-        
-            
-                 // se o email ainda não foi cadastrado...  
-                if (!$existe)
-                {}
-            */         
+   			DesconectarBanco();
         ?>
 
 		<div id="content">
@@ -80,13 +72,15 @@
 
 				<?php
 					// se o email foi encontrado no banco de dados...
-					if (email)
+					if ($existe)
 					{
-						echo 'inscrito->getNome acambamos de enviar uma nova senha para o seu e-mail.
+						// imprime o nome do inscrito
+						echo $inscrito->getNome();
+						echo ', acambamos de enviar uma nova senha para o seu e-mail.
 						O e-mail deve estar chegando em breve, caso não receba o email entre dê mais uma tentandinha,
 						ou entre em contato com o <a href="mailto:carmolim@gmail.com?subject=Bom&Retiro%20de%20Inverno&body=Senha%20perdida%20do%20$incrito->getNome%20$inscrito->getSobrenome">Augusto Carmo</a>.';
 					}				
-											
+					// se o email não existe...						
 					else
 					{
 						echo 'O seu email não foi encontrado, gostaria de fazer sua <a href="inscricao.php">inscrição?</a>';
@@ -100,33 +94,45 @@
 		</div>
 
 		<?php
+			// se o email existe...
+			if ($existe)
+			{
+				// gera uma senha com 6 caracteres usando letras maiusculas e minusculas
+				$senha = geraSenha(6);
+
+				ConectarBanco();
+
+				$id = $inscrito->getId_pessoa();
+
+				// pq tem que estar escrito dessa forma?
+				$query = "UPDATE `test`.`Pessoa` SET `senha` = '$senha' WHERE `Pessoa`.`id_pessoa` ='$id'";
+
+				//echo $query;
+					
+				@mysql_query($query) or die  ("Nao foi possivel executar a QUERY");
 		
-			// gera uma senha com 6 caracteres usando letras maiusculas e minusculas
-			$senha = geraSenha(6);												
-			
-			// EMAIL PARA OS RESPONSÁVEIS
-			
-			// corpo da mensagem
-			$formcontent = "Essa é sua nova senha: $senha";
-			
-			// pessoas que não receber os emails
-			//$recipient = "$inscrito->getEmail";
-			$recipient = "carmolim@gmail.com";
-			
-			// assunto do email
-			$subject = "Bom Retiro de Inverno - Sua nova senha";
-			
-			// remetente
-			$mailheader = "From: Jovens Bom Retiro <bomret.jovens@gmail.com>\r\n"; 
-			     
-			// cabeçalho do email
-			$mailheader .= "MIME-Version: 1.0\r\n";
-			$mailheader .= "Content-Type: text/html; charset=UTF-8\r\n";
-			mail($recipient, $subject, $content, $mailheader) or die("Error!");
-			
-			// método do PHP para enviar o email
-			mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
-			 
+				DesconectarBanco();
+				
+				// EMAIL PARA OS RESPONSÁVEIS
+				
+				// corpo da mensagem
+				$formcontent = "Essa é sua nova senha: $senha";
+				
+				// pessoas que não receber os emails
+				$recipient = $inscrito->getEmail();			
+				
+				// assunto do email
+				$subject = "Bom Retiro de Inverno - Sua nova senha";
+				
+				// remetente
+				$mailheader = "From: Jovens Bom Retiro <bomret.jovens@gmail.com>\r\n";	
+
+				// cabeçalho do email
+				$mailheader .= "MIME-Version: 1.0\r\n";
+				$mailheader .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+				mail($recipient, $subject, $content, $mailheader) or die("Erro no envio do email com a senha.");					
+			}				 
 			
 			// função que gera senha
 			function geraSenha($tamanho = 8, $maiusculas = true, $numeros = true, $simbolos = false)
@@ -150,11 +156,12 @@
 				// Calculamos o total de caracteres possíveis
 				$len = strlen($caracteres);
 				
-				for ($n = 1; $n <= $tamanho; $n++) {
-				// Criamos um número aleatório de 1 até $len para pegar um dos caracteres
-				$rand = mt_rand(1, $len);
-				// Concatenamos um dos caracteres na variável $retorno
-				$retorno .= $caracteres[$rand-1];
+				for ($n = 1; $n <= $tamanho; $n++)
+				{
+					// Criamos um número aleatório de 1 até $len para pegar um dos caracteres
+					$rand = mt_rand(1, $len);
+					// Concatenamos um dos caracteres na variável $retorno
+					$retorno .= $caracteres[$rand-1];
 				}
 				
 				return $retorno;

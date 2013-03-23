@@ -116,7 +116,7 @@
 					<br />
 					<input type="submit" name="submit" value="Entrar" class="button">
 					<br /><br />
-					<a href="reset_senha.php">Esqueci minha senha</a>
+					<a href="esqueci_senha.php">Esqueci minha senha</a>
 			</form>			
 		</div>
 	</div>	
