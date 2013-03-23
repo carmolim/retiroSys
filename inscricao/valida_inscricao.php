@@ -14,7 +14,6 @@
     
     <body>
         <?php
-
             ConectarBanco();
 
             include("Pessoa.php");
@@ -136,7 +135,10 @@
         	
         	DesconectarBanco();
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/desenv
             // EMAIL PARA OS RESPONSÁVEIS
 
             // corpo da mensagem

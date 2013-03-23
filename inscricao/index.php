@@ -120,11 +120,12 @@
 	
 	
 	<?php
+        session_start();
+        
 		ConectarBanco();
 	        if(isset($_POST['submit'])) 
 	        { 
 	            include("Pessoa.php");
-	            session_start();
 	            
 	            $query_senha = "SELECT senha FROM Pessoa WHERE email = '".$_POST["username"]."'";
 	            if (@mysql_result(mysql_query($query_senha),0) == $_POST["password"])
