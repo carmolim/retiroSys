@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" >
 	<head>
@@ -34,12 +36,74 @@
 	</head>
 	
 	<body>
-	
-		<?php			
-			
-						
+
+		<?php
+
+			/*
+				aqui tem que receber o email do formulário
+				verificar o se o email está no banco de dados
+				se estiver no banco de dados
+
+					$email = true;
+
+				se não estiverno banco de dados
+				
+					$email = false;
+			*/
+
+
+            
+            /*
+                em que fazer a verificação do email para ver se ele já não foi cadastrado
+                no do ano passado foi feito assim:
+
+                $sql = "SELECT id_inscricao, email FROM inscricao WHERE email = '".$_POST['email']."'";
+                $result = mysql_query($sql);
+                $existe = (mysql_num_rows($result) > 0);
+        
+            
+                 // se o email ainda não foi cadastrado...  
+                if (!$existe)
+                {}
+            */         
+        ?>
+
+
+
+		<div id="content">
+			<div id="topo">
+				<div id="logo"><img src="../img/snow_flake.png" alt="snow flake" width="250px"/></div>	
+				<h1>NO LIMITE DA GRAÇA</h1>			
+				<hr />			
+			</div>			
+		
+			<div id="box">
+
+				<?php
+					// se o email foi encontrado no banco de dados...
+					if (email)
+					{
+						echo 'inscrito->getNome acambamos de enviar uma nova senha para o seu e-mail.
+						O e-mail deve estar chegando em breve, caso não receba o email entre dê mais uma tentandinha,
+						ou entre em contato com o <a href="mailto:carmolim@gmail.com?subject=Bom&Retiro%20de%20Inverno&body=Senha%20perdida%20do%20$incrito->getNome%20$inscrito->getSobrenome">Augusto Carmo</a>.';
+					}				
+											
+					else
+					{
+						echo 'O seu email não foi encontrado, gostaria de fazer sua <a href="inscricao.php">inscrição?</a>';
+					}						
+				?>
+			</div>	
+
+			<div class="center">
+				<br />bomretirodeinverno ©	
+			</div>
+		</div>
+
+		<?php
+		
 			// gera uma senha com 6 caracteres usando letras maiusculas e minusculas
-			$senha = geraSenha(6);									
+			$senha = geraSenha(6);												
 			
 			// EMAIL PARA OS RESPONSÁVEIS
 			
@@ -96,25 +160,6 @@
 				
 				return $retorno;
 			}		
-		?>		
-		
-		<div id="content">
-					<div id="topo">
-						<div id="logo"><img src="../img/snow_flake.png" alt="snow flake" width="250px"/></div>	
-						<h1>NO LIMITE DA GRAÇA</h1>			
-						<hr />			
-					</div>			
-		
-					<div id="box">
-						$inscrito->getNome acambamos de enviar uma nova senha para o seu e-mail.
-						O e-mail deve estar chegando em breve, caso não receba o email entre dê mais uma tentandinha, ou entre em contato com <a href="mailto:carmolim@gmail.com?subject=Bom&Retiro%20de%20Inverno&body=Senha%20perdida%20do%20$incrito->getNome%20$inscrito->getSobrenome">Link Text</a>
-					</div>	
-					
-					<div class="center">
-					<br />
-						bomretirodeinverno ©	
-					</div>
-				</div>
-				
+		?>						
 	</body>	
 </html>
