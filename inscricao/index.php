@@ -120,7 +120,8 @@
 	
 	
 	<?php
-        session_start();
+        @session_start();
+
         
 		ConectarBanco();
 	        if(isset($_POST['submit'])) 

@@ -110,7 +110,8 @@ require_once("Pessoa.php");?>
 	</script>			
 </head>
 <?php
-session_start();
+@session_start();
+
 
 
     ConectarBanco();
