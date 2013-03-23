@@ -1,6 +1,6 @@
 <?php
-require_once("conectarBD.php");
-require_once("Pessoa.php");
+    require_once("conectarBD.php");
+    require_once("Pessoa.php");
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -10,14 +10,14 @@ require_once("Pessoa.php");
         <meta content='pt' http-equiv='content-language'/>
         <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <!--Scripts Necessários Para a Validação
+
+        <!--Scripts Necessários Para a Validação-->
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>	
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
         <script type="text/javascript" src="../js/jquery.validate.js"></script>
-        <!---->	
+        <!---->
+        
         <link rel="STYLESHEET" type="text/css" href="../css/global.css" />
-
-        <!--<link rel="STYLESHEET" type="text/css" href="../css/global.css" />-->	
 
         <!--Validação-->
         <script type="text/javascript">

@@ -141,11 +141,11 @@
             // corpo da mensagem
             $formcontent = "Nome do inscrito: $inscrito->getNome $inscrito->getSobrenome \n Celular: $inscrito->getCelular \n Telefone: $inscrito->getTelefone \n  Forma de pagamento:??";
             // pessoas que não receber os emails
-            $recipient = "carmolim@gmail.com, muri.o.alves@gmail.com, kaminskao@hotmail.com, lu.degraf@hotmail.com";
+            $recipient = "carmolim@gmail.com, muri.o.alves@gmail.com, kaminskao@hotmail.com, lu.degraf@hotmail.com, jonatashille@gmail.com";
             // assunto do email
             $subject = "Mais um inscrito...";
             //cabeçalho do email
-            $mailheader = "From: $inscrito->getEmail \r\n";
+            $mailheader = "From: ".$inscrito->getEmail();
             // método do PHP para enviar o email
             mail($recipient, $subject, $formcontent, $mailheader) or die("Error!"); 
             
@@ -155,7 +155,7 @@
             // corpo da mensagem
             $formcontent = "teste";
             // destinatário
-            $recipient = $inscrito->getEmail;
+            $recipient = $inscrito->getEmail();
             // assunto
             $subject = "Bom Retiro de Inverno - Inscrição"; 
             // remetente
