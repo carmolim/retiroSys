@@ -18,6 +18,34 @@
 		<link rel="STYLESHEET" type="text/css" href="../css/global.css" />
 		<link rel="STYLESHEET" type="text/css" href="../css/form.css" />
 
+		<style>
+		
+			#content
+			{	
+				width: 565px;
+				margin-top: 20%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			#inscricao
+			{
+				padding: 20px;
+				float: left;	
+				background: rgba(545, 255, 255, .2);
+				height: 240px;
+			}
+			
+			#form
+			{
+				background: rgb(255, 255, 255); /* Fall-back for browsers that don't support rgba */
+				background: rgba(255, 255, 255, .2);
+				padding: 20px;
+				float: right;
+				height: 240px;
+			}
+			
+		</style>
 		
 		<!--Validação-->
 		<script type="text/javascript">  
@@ -53,37 +81,7 @@
 				
 			  });			 
 			});
-		</script>		
-
-		<style>
-		
-			#content
-			{	
-				width: 565px;
-				margin-top: 20%;
-				margin-left: auto;
-				margin-right: auto;
-			}
-			
-			#inscricao
-			{
-				padding: 20px;
-				float: left;	
-				background: rgba(545, 255, 255, .2);
-				height: 240px;
-			}
-			
-			#form
-			{
-				background: rgb(255, 255, 255); /* Fall-back for browsers that don't support rgba */
-				background: rgba(255, 255, 255, .2);
-				padding: 20px;
-				float: right;
-				height: 240px;
-			}
-			
-		</style>
-		
+		</script>			
 	</head>
 	
 	<body>
@@ -116,7 +114,7 @@
 					<br />
 					<input type="submit" name="submit" value="Entrar" class="button">
 					<br /><br />
-					<a href="reset_senha.php">Esqueci minha senha</a>
+					<a href="esqueci_senha.php">Esqueci minha senha</a>
 			</form>			
 		</div>
 	</div>	

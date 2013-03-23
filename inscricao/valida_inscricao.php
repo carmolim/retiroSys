@@ -107,9 +107,9 @@
         				"'".mysql_real_escape_string($inscrito->getEmail($_POST["email"]))."',".
         				"'".mysql_real_escape_string($inscrito->getSenha($_POST["senha"]))."',".
         				"'".mysql_real_escape_string($inscrito->getSexo($_POST["sexo"]))."',".
-        				mysql_real_escape_string($inscrito->getDiaNasc($_POST["dianasc"])).",".
-        				mysql_real_escape_string($inscrito->getMesNasc($_POST["mesnasc"])).",".
-        				mysql_real_escape_string($inscrito->getAnoNasc($_POST["anonasc"])).",".
+        				    mysql_real_escape_string($inscrito->getDiaNasc($_POST["dianasc"])).",".
+        				    mysql_real_escape_string($inscrito->getMesNasc($_POST["mesnasc"])).",".
+        				    mysql_real_escape_string($inscrito->getAnoNasc($_POST["anonasc"])).",".
         				"'".mysql_real_escape_string($inscrito->getRG($_POST["rg"]))."',".
         				"'".mysql_real_escape_string($inscrito->getCPF($_POST["cpf"]))."',".
         				"'".mysql_real_escape_string($inscrito->getCelular($_POST["celular"]))."',".
@@ -126,7 +126,7 @@
         				"'".mysql_real_escape_string($inscrito->getAlergia($_POST["alergia"]))."',".
         				"'".mysql_real_escape_string($inscrito->getCuidado($_POST["cuidado_especial"]))."',".
         				"'".mysql_real_escape_string($inscrito->getPrecisaCarona($_POST["precisa_carona"]))."',".
-        				mysql_real_escape_string($inscrito->getVagas($_POST["vagas"])).",".
+        				    mysql_real_escape_string($inscrito->getVagas($_POST["vagas"])).",".
         				"'',".
         				"0)";
         	echo $query;
@@ -139,7 +139,7 @@
             // EMAIL PARA OS RESPONSÁVEIS
 
             // corpo da mensagem
-            $formcontent = "Nome do inscrito: $inscrito->getNome $inscrito->getSobrenome \n Celular: $inscrito->getCelular \n Telefone: $inscrito->getTelefone \n  Forma de pagamento:??";
+            $formcontent = "Nome do inscrito: $inscrito->getNome() $inscrito->getSobrenome() \n Celular: $inscrito->getCelular() \n Telefone: $inscrito->getTelefone() \n  Forma de pagamento:??";
             // pessoas que não receber os emails
             $recipient = "carmolim@gmail.com, muri.o.alves@gmail.com, kaminskao@hotmail.com, lu.degraf@hotmail.com, jonatashille@gmail.com";
             // assunto do email
@@ -147,7 +147,7 @@
             //cabeçalho do email
             $mailheader = "From: ".$inscrito->getEmail();
             // método do PHP para enviar o email
-            mail($recipient, $subject, $formcontent, $mailheader) or die("Error!"); 
+            mail($recipient, $subject, $formcontent, $mailheader) or die("Erro no envio para os responsáveis"); 
             
 
             // EMAIL PARA O INSCRITO
@@ -163,7 +163,7 @@
             // cabeçalho do email
             $mailheader .= "MIME-Version: 1.0\r\n";
             $mailheader .= "Content-Type: text/html; charset=UTF-8\r\n";
-            mail($recipient, $subject, $content, $mailheader) or die("Error!");
+            mail($recipient, $subject, $content, $mailheader) or die("Erro no envio para o inscrito");
         ?>
     </body>
 </html>
