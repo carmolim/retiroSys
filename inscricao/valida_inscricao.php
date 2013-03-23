@@ -135,6 +135,7 @@
         	
         	DesconectarBanco();
 
+
             // EMAIL PARA OS RESPONSÁVEIS
 
             // corpo da mensagem
@@ -147,6 +148,7 @@
             $mailheader = "From: $inscrito->getEmail \r\n";
             // método do PHP para enviar o email
             mail($recipient, $subject, $formcontent, $mailheader) or die("Error!"); 
+            
 
             // EMAIL PARA O INSCRITO
 

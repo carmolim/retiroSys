@@ -101,6 +101,7 @@
 			<h1>Login</h1>		
 			<form action=<?php echo $_SERVER['PHP_SELF']; ?> method='post' name='login'>
 				<div>
+					<br>
 					<label for='username' >E-mail:</label>
 					<br />
 					<input type='text' name='username' id='username' maxlength="50" /><br/><br />
@@ -121,7 +122,6 @@
 	
 	<?php
         @session_start();
-
         
 		ConectarBanco();
 	        if(isset($_POST['submit'])) 

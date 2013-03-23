@@ -140,7 +140,7 @@
 	<body>
 		<div id='content'>
 		
-		<form action="valida_inscricao.php" method="post" name="InscricaoForm">
+		<form id="InscricaoForm" action="valida_inscricao.php" method="post" name="InscricaoForm">
 			<fieldset>
 				<legend>Identificação</legend>
 				<table width="560" cellpadding="4" cellspacing="10">
