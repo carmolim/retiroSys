@@ -73,6 +73,7 @@
 					{
 						notEqual: "sexo"
 					},
+					
 					rg: "required",
 	
 					cpf: "required",

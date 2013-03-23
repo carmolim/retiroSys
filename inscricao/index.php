@@ -104,12 +104,12 @@
 					<br>
 					<label for='username' >E-mail:</label>
 					<br />
-					<input type='text' name='username' id='username' maxlength="50" class="required" /><br/><br />
+					<input type='text' name='username' id='username' maxlength="50"/><br /><br />
 				</div>
 				<div>
 					<label for='password'>Senha:</label>
 					<br />
-					<input type='password' name='password' id='password' maxlength="50" class="required" /><br/>
+					<input type='password' name='password' id='password' maxlength="50"/><br/>
 				</div>
 					<br />
 					<input type="submit" name="submit" value="Entrar" class="button">
