@@ -19,6 +19,8 @@
 		<meta content='pt' http-equiv='content-language'/>
 		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+
+		<link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
 		
 		<link rel="STYLESHEET" type="text/css" href="../css/global.css" />
 		<link rel="STYLESHEET" type="text/css" href="../css/form.css" />

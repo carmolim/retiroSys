@@ -2,9 +2,9 @@
 ?>
 
 <div class="center">
-						<br />bomretirodeinverno ©	
-					</div>
-				</div>
-				</html>
+	<br />bomretirodeinverno ©	
+		</div>
+</div>
+</html>
 
 
