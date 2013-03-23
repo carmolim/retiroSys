@@ -126,7 +126,6 @@ require_once("Pessoa.php");
 <?php
 @session_start();
 
-
     ConectarBanco();
 
     /* $query_senha = "SELECT senha FROM Pessoa WHERE email = '".$_POST["username"]."'";
