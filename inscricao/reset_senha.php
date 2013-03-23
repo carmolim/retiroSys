@@ -103,8 +103,8 @@
 			   			// imprime o nome do inscrito
 						echo $inscrito->getNome();
 						echo ', acambamos de enviar uma nova senha para o seu e-mail.
-						O e-mail deve estar chegando em breve, caso não receba o email entre dê mais uma tentandinha,
-						ou entre em contato com o <a href="mailto:carmolim@gmail.com?subject=Bom&Retiro%20de%20Inverno&body=Senha%20perdida%20do%20$incrito->getNome%20$inscrito->getSobrenome">Augusto Carmo</a>.';
+						O e-mail deve estar chegando em breve, caso não receba o email
+						entre em contato com o <a href="mailto:carmolim@gmail.com?subject=Bom&Retiro%20de%20Inverno&body=Senha%20perdida%20do%20$incrito->getNome%20$inscrito->getSobrenome">Augusto Carmo</a>.';
 		    		}
 
 		    		else
@@ -150,7 +150,6 @@
 			// Concatenamos um dos caracteres na variável $retorno
 			$retorno .= $caracteres[$rand-1];
 		}
-
 		return $retorno;
 	}		
 ?>				

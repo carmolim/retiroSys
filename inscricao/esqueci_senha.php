@@ -27,19 +27,13 @@
 					{
 						required: 	" <br />É necessário informar um e-mail",
 						email: 		" <br />Informe um e-mail válido"
-					},		
-					
-				}
-				
+					},				
+				}				
 			  });			 
 			});
 		</script>';			
 
 	require_once('topo.php');
-
-	/*
-		fazer a validação do email
-	*/
 ?>
 
 	<body>
@@ -66,6 +60,5 @@
 			</div>
 		</div>		
 	</body>
-
 <?php require_once('rodape.php'); ?>
 
