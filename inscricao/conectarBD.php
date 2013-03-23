@@ -2,13 +2,8 @@
 	function ConectarBanco()
 	{
 		$host = "localhost";
-<<<<<<< HEAD
 		$username = "root";
 		$password = "root";
-=======
-		$username = "host";
-		$password = "";
->>>>>>> origin/desenv
 		$database = "test";
 		
 		mysql_connect($host,$username,$password);

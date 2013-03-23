@@ -42,6 +42,7 @@
 			/*
 				aqui tem que receber o email do formulário
 				verificar o se o email está no banco de dados
+				
 				se estiver no banco de dados
 
 					$email = true;
@@ -67,8 +68,6 @@
                 {}
             */         
         ?>
-
-
 
 		<div id="content">
 			<div id="topo">
