@@ -17,7 +17,7 @@
 			
 		<link rel="STYLESHEET" type="text/css" href="../css/global.css" />
 		<link rel="STYLESHEET" type="text/css" href="../css/form.css" />
-		
+
 		<style>
 		
 			#content
@@ -36,7 +36,7 @@
 				height: 240px;
 			}
 			
-			#login
+			#form
 			{
 				background: rgb(255, 255, 255); /* Fall-back for browsers that don't support rgba */
 				background: rgba(255, 255, 255, .2);
@@ -59,6 +59,7 @@
 						required: true,
 						email: true
 					},	
+
 					password:
 					{
 						required: true,
@@ -80,8 +81,7 @@
 				
 			  });			 
 			});
-		</script>		
-		
+		</script>			
 	</head>
 	
 	<body>
@@ -96,25 +96,25 @@
 			<a href="inscricao.php">Inscreva - se!</a>
 		</div>
 		
-		<div id="login">		
+		<div id="form">		
 	
 			<h1>Login</h1>		
-			<form action=<?php echo $_SERVER['PHP_SELF']; ?> method='post' name='login'>
+			<form id='login' action=<?php echo $_SERVER['PHP_SELF']; ?> method='post' name='login'>
 				<div>
 					<br>
 					<label for='username' >E-mail:</label>
 					<br />
-					<input type='text' name='username' id='username' maxlength="50" /><br/><br />
+					<input type='text' name='username' id='username' maxlength="50" class="required" /><br/><br />
 				</div>
 				<div>
 					<label for='password'>Senha:</label>
 					<br />
-					<input type='password' name='password' id='password' maxlength="50" /><br/>
+					<input type='password' name='password' id='password' maxlength="50" class="required" /><br/>
 				</div>
 					<br />
-					<input class="button" type="submit" name="submit" value="Entrar">
+					<input type="submit" name="submit" value="Entrar" class="button">
 					<br /><br />
-					<a href='reset_senha.php'>Esqueci minha senha</a>
+					<a href="esqueci_senha.php">Esqueci minha senha</a>
 			</form>			
 		</div>
 	</div>	

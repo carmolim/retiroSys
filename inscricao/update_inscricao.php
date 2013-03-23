@@ -1,6 +1,6 @@
 <?php
-require_once("conectarBD.php");
-require_once("Pessoa.php");
+    require_once("conectarBD.php");
+    require_once("Pessoa.php");
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -10,14 +10,14 @@ require_once("Pessoa.php");
         <meta content='pt' http-equiv='content-language'/>
         <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <!--Scripts Necessários Para a Validação
+
+        <!--Scripts Necessários Para a Validação-->
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>	
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
         <script type="text/javascript" src="../js/jquery.validate.js"></script>
-        <!---->	
+        <!---->
+        
         <link rel="STYLESHEET" type="text/css" href="../css/global.css" />
-
-        <!--<link rel="STYLESHEET" type="text/css" href="../css/global.css" />-->	
 
         <!--Validação-->
         <script type="text/javascript">
@@ -142,7 +142,11 @@ require_once("Pessoa.php");
 
     echo $inscrito->getId_pessoa();
 
-    $query = "SELECT * FROM Pessoa WHERE id_pessoa = " . $inscrito->getId_pessoa();
+<<<<<<< HEAD
+    $query = "SELECT * FROM Pessoa WHERE id_pessoa = ".$inscrito->getId_pessoa();
+=======
+    $query = "SELECT * FROM Pessoa WHERE id_pessoa = '$inscrito->getId_pessoa()'";
+>>>>>>> 6939bc006682b5ee2a53d2b107c8f9b580c31e7d
 
     $result = mysql_fetch_assoc(mysql_query($query)) or die("Nao foi possivel executar a QUERY");
 
@@ -185,7 +189,8 @@ require_once("Pessoa.php");
     ////////////
     $_SESSION['inscrito_obj'] = $inscrito;
     DesconectarBanco();
-    ?>
+?>
+
     <div id='update'>
         <form id="updateForm" action="valida_update.php" method="post" name="updateForm">
             <fieldset>
@@ -239,15 +244,15 @@ require_once("Pessoa.php");
 
                             <select name="mesnasc" id="mesnasc" class="required">
                                 <option value="-1">Mês:</option>
-                                <option value="1" <?php if ($inscrito->getMesNasc() == 1) echo "SELECTED"; ?>>Janeiro</option>
-                                <option value="2" <?php if ($inscrito->getMesNasc() == 2) echo "SELECTED"; ?>>Fevereiro</option>
-                                <option value="3" <?php if ($inscrito->getMesNasc() == 3) echo "SELECTED"; ?>>Março</option>
-                                <option value="4" <?php if ($inscrito->getMesNasc() == 4) echo "SELECTED"; ?>>Abril</option>
-                                <option value="5" <?php if ($inscrito->getMesNasc() == 5) echo "SELECTED"; ?>>Maio</option>
-                                <option value="6" <?php if ($inscrito->getMesNasc() == 6) echo "SELECTED"; ?>>Junho</option>
-                                <option value="7" <?php if ($inscrito->getMesNasc() == 7) echo "SELECTED"; ?>>Julho</option>
-                                <option value="8" <?php if ($inscrito->getMesNasc() == 8) echo "SELECTED"; ?>>Agosto</option>
-                                <option value="9" <?php if ($inscrito->getMesNasc() == 9) echo "SELECTED"; ?>>Setembro</option>
+                                <option value="1"  <?php if ($inscrito->getMesNasc() == 1) echo "SELECTED"; ?>>Janeiro</option>
+                                <option value="2"  <?php if ($inscrito->getMesNasc() == 2) echo "SELECTED"; ?>>Fevereiro</option>
+                                <option value="3"  <?php if ($inscrito->getMesNasc() == 3) echo "SELECTED"; ?>>Março</option>
+                                <option value="4"  <?php if ($inscrito->getMesNasc() == 4) echo "SELECTED"; ?>>Abril</option>
+                                <option value="5"  <?php if ($inscrito->getMesNasc() == 5) echo "SELECTED"; ?>>Maio</option>
+                                <option value="6"  <?php if ($inscrito->getMesNasc() == 6) echo "SELECTED"; ?>>Junho</option>
+                                <option value="7"  <?php if ($inscrito->getMesNasc() == 7) echo "SELECTED"; ?>>Julho</option>
+                                <option value="8"  <?php if ($inscrito->getMesNasc() == 8) echo "SELECTED"; ?>>Agosto</option>
+                                <option value="9"  <?php if ($inscrito->getMesNasc() == 9) echo "SELECTED"; ?>>Setembro</option>
                                 <option value="10" <?php if ($inscrito->getMesNasc() == 10) echo "SELECTED"; ?>>Outubro</option>
                                 <option value="11" <?php if ($inscrito->getMesNasc() == 11) echo "SELECTED"; ?>>Novembro</option>
                                 <option value="12" <?php if ($inscrito->getMesNasc() == 12) echo "SELECTED"; ?>>Dezembro</option>
