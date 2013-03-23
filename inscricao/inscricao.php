@@ -392,7 +392,7 @@
 				</table>
 			</fieldset>
 			<br>
-			<input type="submit" name="submit" value="Enviar">
+			<input type="submit" name="submit" value="Enviar" class="button">
 		</form>
 		</div>
 	<?php
