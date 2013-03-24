@@ -124,13 +124,9 @@
 	</script>			
 </head>
 <?php
-//@session_start();
-
     ConectarBanco();
 
     $id = $_GET['id'];
-
-    echo $id;
 
     $query = "SELECT * FROM Pessoa WHERE id_pessoa = ".$id;
 

@@ -123,8 +123,6 @@
 	
 	
 	<?php
-        //@session_start();
-        
 		ConectarBanco();
 	        if(isset($_POST['submit'])) 
 	        { 
