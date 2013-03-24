@@ -19,6 +19,7 @@
 		<!---->	
 		<link rel="STYLESHEET" type="text/css" href="../css/global.css" />
 		<link rel="STYLESHEET" type="text/css" href="../css/form.css" />
+		<link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
 		
 		<style>		
 			#content
