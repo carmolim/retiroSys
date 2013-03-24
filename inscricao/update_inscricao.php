@@ -128,19 +128,7 @@
 
     ConectarBanco();
 
-    /* $query_senha = "SELECT senha FROM Pessoa WHERE email = '".$_POST["username"]."'";
-      if (@mysql_result(mysql_query($query_senha),0) == $_POST["password"])
-      $query_login = "SELECT id_pessoa FROM Pessoa WHERE email = '".$_POST["username"]."'";
-      else
-      die ("SENHA USUARIO ERRADO");
-
-      $id_pessoa = mysql_result(mysql_query($query_login),0) or die  ("PROBLEMA"); */
-
-    //include("Pessoa.php");
-
     $inscrito = $_SESSION['inscrito_obj'];
-
-    echo $inscrito->getId_pessoa();
 
     $query = "SELECT * FROM Pessoa WHERE id_pessoa = ".$inscrito->getId_pessoa();
 
