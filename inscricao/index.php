@@ -123,23 +123,18 @@
 	
 	
 	<?php
-        @session_start();
+        //@session_start();
         
 		ConectarBanco();
 	        if(isset($_POST['submit'])) 
 	        { 
-	            include("Pessoa.php");
-	            
 	            $query_senha = "SELECT senha FROM Pessoa WHERE email = '".$_POST["username"]."'";
 	            if (@mysql_result(mysql_query($query_senha),0) == $_POST["password"])
 	            {
 	                $query_login = "SELECT id_pessoa FROM Pessoa WHERE email = '".$_POST["username"]."'";
-	                $id_pessoa = mysql_result(mysql_query($query_login),0) or die  ("PROBLEMA");
-	                
-	                $inscrito = new Pessoa();
-	                $inscrito->setId_pessoa($id_pessoa);
-	                $_SESSION['inscrito_obj'] = $inscrito;
-	                echo "<script>window.open(\"update_inscricao.php\",'_self')</script>";
+	                $id = mysql_result(mysql_query($query_login),0) or die  ("PROBLEMA");
+
+	                echo "<script>window.open(\"update_inscricao.php?id=".$id."\",'_self')</script>";
 	            }
 	            
 	            else

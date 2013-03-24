@@ -124,16 +124,20 @@
 	</script>			
 </head>
 <?php
-@session_start();
+//@session_start();
 
     ConectarBanco();
 
-    $inscrito = $_SESSION['inscrito_obj'];
+    $id = $_GET['id'];
 
-    $query = "SELECT * FROM Pessoa WHERE id_pessoa = ".$inscrito->getId_pessoa();
+    echo $id;
+
+    $query = "SELECT * FROM Pessoa WHERE id_pessoa = ".$id;
 
     $result = mysql_fetch_assoc(mysql_query($query)) or die("Nao foi possivel executar a QUERY");
 
+    $inscrito = new Pessoa();
+    $inscrito->setId_pessoa($id);
     // identificação
     ////////////////   
     $inscrito->setNome($result["nome"]);
