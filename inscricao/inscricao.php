@@ -483,22 +483,7 @@
 			{	
 
 
-	            $inscrito = new Pessoa();
-
-	            /*
-	                em que fazer a verificação do email para ver se ele já não foi cadastrado
-	                no do ano passado foi feito assim:
-
-	                $sql = "SELECT id_inscricao, email FROM inscricao WHERE email = '".$_POST['email']."'";
-	                $result = mysql_query($sql);
-	                $existe = (mysql_num_rows($result) > 0);
-	        
-	            
-	                 // se o email ainda não foi cadastrado...  
-	                if (!$existe)
-	                {}
-	            */                    
-
+	            $inscrito = new Pessoa();                 
 
 	            // identificação
 	            ////////////////   
@@ -564,7 +549,9 @@
 	            $inscrito->setVagas($_POST["vagas"]);
 	            //hora de saida
 	            ////////////
-	        	
+	        	$inscrito->setFormaPagamento($_POST["forma_pagto"]);
+	        	$inscrito->setpagEfetuado("NAO");
+
 	            $query = "INSERT INTO Pessoa VALUES (".
 	        				"'',".
 	        				"'".mysql_real_escape_string($inscrito->getNome($_POST["fname"]))."',".
@@ -593,7 +580,11 @@
 	        				"'".mysql_real_escape_string($inscrito->getPrecisaCarona($_POST["precisa_carona"]))."',".
 	        				    mysql_real_escape_string($inscrito->getVagas($_POST["vagas"])).",".
 	        				"'',".
-	        				"0)";
+	        				"0, ".
+	        				"'".mysql_real_escape_string($inscrito->getFormaPagamento($_POST["forma_pagto"]))."',".
+	        				"'".mysql_real_escape_string($inscrito->getpagEfetuado())."',".
+	        				"null".
+	        				")";
 	        	echo $query;
 	        				
 	        	mysql_query($query) or die  ("\nNao foi possivel executar a QUERY");

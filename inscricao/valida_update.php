@@ -10,13 +10,13 @@
     <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
 	
 <?php
-@session_start();
+//session_start();
 
     ConectarBanco();
 
     include("Pessoa.php");
-    
-    $inscrito = $_SESSION['inscrito_obj'];
+    $inscrito = new Pessoa();
+    $inscrito->setId_pessoa($_GET['id']);
     
     // identificação
     ////////////////   
@@ -44,7 +44,7 @@
 
     //Outras informações
     ////////////////////
-    $inscrito->setCelular($_POST["celular"]);
+    $inscrito->setCelular($_POST["celular"]);       
     $inscrito->setTelefone($_POST["telefone"]);
     $inscrito->setProfissao($_POST["profissao"]);
     $inscrito->setEstadoCivil($_POST["estado_civil"]);
@@ -82,6 +82,9 @@
     $inscrito->setVagas($_POST["vagas"]);
     //hora de saida
     ////////////
+    //Forma de Pagamento
+    $inscrito->setFormaPagamento($_POST["forma_pagto"]);
+
      $query = "UPDATE Pessoa SET ".
 				"nome='".mysql_real_escape_string($inscrito->getNome())."',".
 				"sobrenome='".mysql_real_escape_string($inscrito->getSobrenome())."',".
@@ -106,8 +109,9 @@
 				"alergia='".mysql_real_escape_string($inscrito->getAlergia())."',".
 				"cuidado='".mysql_real_escape_string($inscrito->getCuidado())."',".
 				"precisa_carona='".mysql_real_escape_string($inscrito->getPrecisaCarona())."',".
-				"vagas_carro=".mysql_real_escape_string($inscrito->getVagas()).
-                                " WHERE id_pessoa = ".mysql_real_escape_string($inscrito->getId_pessoa());
+				"vagas_carro=".mysql_real_escape_string($inscrito->getVagas()).",".
+                "forma_pagamento='".mysql_real_escape_string($inscrito->getFormaPagamento())."'".
+                " WHERE id_pessoa = ".mysql_real_escape_string($inscrito->getId_pessoa());
 	echo $query;
 				
 	@mysql_query($query) or die ("Nao foi possivel executar a QUERY");

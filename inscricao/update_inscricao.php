@@ -200,12 +200,15 @@
     $inscrito->setVagas($result["vagas_carro"]);
     //hora de saida
     ////////////
-    $_SESSION['inscrito_obj'] = $inscrito;
+
+    //Forma de Pagamento
+    $inscrito->setFormaPagamento($result["forma_pagamento"]);
+
     DesconectarBanco();
 ?>
 
     <div id='content'>
-        <form id="updateForm" action="valida_update.php" method="post" name="updateForm">
+        <form id="updateForm" action=<?php echo "valida_update.php?id=".$inscrito->getId_pessoa();?> method="post" name="updateForm">
             <fieldset>
                 <legend>Identificação</legend>
                 <table width="560" cellpadding="4" cellspacing="10">

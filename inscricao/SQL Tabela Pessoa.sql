@@ -1,3 +1,7 @@
+DROP TABLE Pessoa
+
+go
+
 create table Pessoa
 (
 	id_pessoa  INT NOT NULL AUTO_INCREMENT,
@@ -32,6 +36,10 @@ create table Pessoa
 	hora_saida varchar(20),
 
 	quarto varchar(10),
+
+	forma_pagamento varchar(20) NOT NULL,
+	pag_efetuado varchar(3) NOT NULL,
+	data_pagamento date,
 
 	PRIMARY KEY(id_pessoa)
 )

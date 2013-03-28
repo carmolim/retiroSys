@@ -54,7 +54,7 @@ class Pessoa
 
     // formas de pagamento
     private $formaPagamento;
-
+    private $pagEfetuado;
 
 
     // ===========
@@ -225,6 +225,10 @@ class Pessoa
     {
         $this->formaPagamento = $n;
     }
+    public function setPagEfetuado($n)
+    {
+        $this->pagEfetuado = $n;
+    }
     
 
 
@@ -392,7 +396,10 @@ class Pessoa
     {
         return $this->formaPagamento;
     } 
-    
+    public function getPagEfetuado()
+    {
+        return $this->pagEfetuado;
+    } 
 } // end of class pessoa
 
 ?>
