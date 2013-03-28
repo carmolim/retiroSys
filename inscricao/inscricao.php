@@ -20,7 +20,6 @@
 		<link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
 		<link rel="STYLESHEET" type="text/css" href="../css/global.css" />
 		<link rel="STYLESHEET" type="text/css" href="../css/form.css" />
-		<link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
 		
 		<style>		
 			#content
@@ -33,6 +32,22 @@
 				background: rgba(255, 255, 255, .2);
 			}						
 		</style>
+
+		<!-- script para mudar a cor de fundo quando o radio button é selecionado-->
+		<script type="text/javascript">
+			 			 			
+			function styleToggle(b)
+			{
+				for (var i = 0; i< b.form.length; i++)
+				{
+					if (b.form[i].name == b.name)
+					{	
+						b.form[i].parentNode.style.background = b.form[i].checked? '#fff' : '';
+					}
+				}
+			} 				
+		</script>
+	
 		
 		
 		<!--Scripts com uma nova funcao do validate notEqaul-->	
@@ -393,10 +408,65 @@
 				</tr>
 				</table>
 			</fieldset>
-			<br>
-			<input type="submit" name="submit" value="Enviar" class="button">
+			<fieldset>
+                <legend>Forma de Pagamento</legend>
+                 Depósitos e transferências devem ser feitas para a seguinte conta: <br />
+                 HSBC Ag. 0054-0 Cc. 08874-71 CNPJ. 79.080.602/0039-29  
+                 <br />
+                 <br />
+                 É obrigatório o envio do comprovante de depósito ou transferência para o seguinte email: <br />
+                 
+                 <a href="mailto: muri.o.alves@gmail.com?Subject=Comprovante%20de%20pagamento">muri.o.alves@gmail.com</a>
+                      <br />
+                      <br />
+                     Escolha uma das formas de pagamento a seguir:</p>
+                  <table width="560" border="0" cellpadding="6" cellspacing="10">
+                    <tr>
+                      <td width="304" class="opcao">
+                        <label>
+                            <br />
+                            <input name="forma_pagto" type="radio" id="dinheiro" value="dinheiro" checked="checked" onclick="styleToggle(this)"/>
+                            <br />
+                            Dinheiro <br />
+                            R$ 270,00
+                            <br />
+                            <br />
+                        </label>
+                      </td>
+                      
+                      <td width="297" class="opcao">
+                        <label>
+                            <br />
+                            <input name="forma_pagto" type="radio" id="deposito_transferencia" value="deposito_transferencia" onclick="styleToggle(this)"/>
+                            <br />
+                            Depósito ou
+                            Transferência<br />
+                            R$ 270,00  
+                            <br />
+                            <br /> 
+                        </label>
+                      </td>
+                      <td width="297" class="opcao">
+                        <label>
+                            <br />
+                            <input name="forma_pagto" type="radio" id="pagseguro" value="pagseguro" onclick="styleToggle(this)"/>
+                            <br />
+                            PagSeguro R$ 300,00*
+                            <br />
+                            até 10x
+                            <br />
+                            <br />
+                        </label>
+                    </td>
+                    </tr>
+                  </table>  
+        </fieldset>
+		<br>
+		<input type="submit" name="submit" value="Enviar" class="button">
 		</form>
 		</div>
+
+
 	<?php
 		ConectarBanco();
 		if(isset($_POST['submit'])) 
@@ -535,7 +605,7 @@
 
 	            // corpo da mensagem
 	            $formcontent = "Nome do inscrito: ".$inscrito->getNome()." ".$inscrito->getSobrenome()." \n Celular: ".$inscrito->getCelular()." \n Telefone: ".$inscrito->getTelefone()." \n  Forma de pagamento:??";
-	            echo $formcontent;
+	            //echo $formcontent;
 	            // pessoas que não receber os emails
 	            $recipient = "carmolim@gmail.com, jonatashille@gmail.com";
 	            // assunto do email
@@ -549,6 +619,7 @@
 	            // EMAIL PARA O INSCRITO
 
 	            // corpo da mensagem
+	            // tem que colocar a mensagem com a forma de pagamento etc... 
 	            $formcontent = "teste";
 	            // destinatário
 	            $recipient = $inscrito->getEmail();

@@ -18,6 +18,35 @@
         <!---->
         <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
         <link rel="STYLESHEET" type="text/css" href="../css/global.css" />
+        <link rel="STYLESHEET" type="text/css" href="../css/form.css" />
+
+        <style>     
+            #content
+            {   
+                width: 550px;
+                margin-top: 100px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 20px;
+                background: rgba(255, 255, 255, .2);
+            }                       
+        </style>
+
+            <!-- script para mudar a cor de fundo quando o radio button é selecionado-->
+        <script type="text/javascript">
+                                    
+            function styleToggle(b)
+            {
+                for (var i = 0; i< b.form.length; i++)
+                {
+                    if (b.form[i].name == b.name)
+                    {   
+                        b.form[i].parentNode.style.background = b.form[i].checked? '#fff' : '';
+                    }
+                }
+            }               
+        </script>
+
 
         <!--Validação-->
         <script type="text/javascript">
@@ -175,22 +204,24 @@
     DesconectarBanco();
 ?>
 
-    <div id='update'>
+    <div id='content'>
         <form id="updateForm" action="valida_update.php" method="post" name="updateForm">
             <fieldset>
                 <legend>Identificação</legend>
-                <table width="580" cellpadding="4" cellspacing="10">
+                <table width="560" cellpadding="4" cellspacing="10">
                     <tr>
                         <td width="237"><label for="fname">Nome</label></td>
                         <td width="319"><input id="fname" name="fname" value=<?php echo "'" . $inscrito->getNome() . "'"; ?> type="text" class="required" /></td>
                     </tr>
                     <tr>
-                        <td><label for="lname">Sobrenome</label></td>
+                        <td><label for="lname">Sobrenome</label></td>   
                         <td><input id="lname" name="lname" value=<?php echo "'" . $inscrito->getSobrenome() . "'"; ?> type="text" class="required" /></td>
                     </tr>
                     <tr>
                         <td><label for="email">E-mail</label></td>
-                        <td><input id="email" name="email" value=<?php echo "'" . $inscrito->getEmail() . "'"; ?> type="text" class="required" readonly/></td>
+                        <td><?php echo $inscrito->getEmail(); ?></td>
+                        <!-- <td><input id="email" name="email" value=<?php echo "'" . $inscrito->getEmail() . "'"; ?> type="text" class="required" readonly/></td> -->
+                        <input id="email" name="email" value=<?php echo "'" . $inscrito->getEmail() . "'"; ?> type="hidden" />
                     </tr>
                     <tr>
                         <td><label for="senha">Senha</label></td>
@@ -270,7 +301,7 @@
 
             <fieldset id='outras'>
                 <legend>Outras informações</legend>
-                <table width="580" cellpadding="4" cellspacing="10">
+                <table width="560" cellpadding="4" cellspacing="10">
                     <tr>
                         <td width="237"><label for="celular">Celular</label></td>
                         <td width="319"><input id="celular" name="celular" value=<?php echo "'" . $inscrito->getCelular() . "'"; ?> type="text" class="required" /></td>
@@ -362,7 +393,7 @@
 
             <fieldset id='saude'>
                 <legend>Saúde</legend>
-                <table width="580" cellpadding="4" cellspacing="10">
+                <table width="560" cellpadding="4" cellspacing="10">
                     <tr>
                         <td width="237"><label for="emergencia_contato">Contato para Emergência</label></td>
                         <td width="319"><input id="emergencia_contato" name="emergencia_contato" value=<?php echo "'" . $inscrito->getContatoEmergencia() . "'"; ?> type="text" /></td>
@@ -388,7 +419,7 @@
 
             <fieldset id='transporte'>
                 <legend>Transporte</legend>
-                <table width="580" cellpadding="4" cellspacing="10">
+                <table width="560" cellpadding="4" cellspacing="10">
                     <tr>
                         <td width="237"><label for="precisa_carona">Precisa de Carona?</label></td>
                         <td width="319">
@@ -420,8 +451,62 @@
                 </table>
             </fieldset>
 
+            <fieldset>
+                <legend>Forma de Pagamento</legend>
+                 Depósitos e transferências devem ser feitas para a seguinte conta: <br />
+                 HSBC Ag. 0054-0 Cc. 08874-71 CNPJ. 79.080.602/0039-29  
+                 <br />
+                 <br />
+                 É obrigatório o envio do comprovante de depósito ou transferência para o seguinte email: <br />
+                 
+                 <a href="mailto: muri.o.alves@gmail.com?Subject=Comprovante%20de%20pagamento">muri.o.alves@gmail.com</a>
+                      <br />
+                      <br />
+                     Escolha uma das formas de pagamento a seguir:</p>
+                  <table width="560" border="0" cellpadding="6" cellspacing="10">
+                    <tr>
+                      <td width="304" class="opcao">
+                        <label>
+                            <br />
+                            <input name="forma_pagto" type="radio" id="dinheiro" value="dinheiro" checked="checked" onclick="styleToggle(this)"/>
+                            <br />
+                            Dinheiro <br />
+                            R$ 270,00
+                            <br />
+                            <br />
+                        </label>
+                      </td>
+                      
+                      <td width="297" class="opcao">
+                        <label>
+                            <br />
+                            <input name="forma_pagto" type="radio" id="deposito_transferencia" value="deposito_transferencia" onclick="styleToggle(this)"/>
+                            <br />
+                            Depósito ou
+                            Transferência<br />
+                            R$ 270,00  
+                            <br />
+                            <br /> 
+                        </label>
+                      </td>
+                      <td width="297" class="opcao">
+                        <label>
+                            <br />
+                            <input name="forma_pagto" type="radio" id="pagseguro" value="pagseguro" onclick="styleToggle(this)"/>
+                            <br />
+                            PagSeguro R$ 300,00*
+                            <br />
+                            até 10x
+                            <br />
+                            <br />
+                        </label>
+                    </td>
+                    </tr>
+                  </table>  
+        </fieldset>
+
             <br>
-                <input type="submit" value="Atualizar">
+                <input type="submit" value="Atualizar" class="button">
         </form>
     </div>
 </html>

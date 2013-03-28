@@ -66,3 +66,20 @@ select
 {
 	background-color: gray;
 }
+
+.opcao
+{
+	line-height: 1.4em;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.3);	
+}
+
+.opcao :hover
+{
+	background-color: rgba(255, 255, 255, 0.5);	
+}
+
+.opcao label
+{
+  display: block;
+}

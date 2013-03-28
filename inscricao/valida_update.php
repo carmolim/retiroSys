@@ -110,7 +110,7 @@
                                 " WHERE id_pessoa = ".mysql_real_escape_string($inscrito->getId_pessoa());
 	echo $query;
 				
-	@mysql_query($query) or die  ("Nao foi possivel executar a QUERY");
+	@mysql_query($query) or die ("Nao foi possivel executar a QUERY");
 	
 	DesconectarBanco();
 ?>
