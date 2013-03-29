@@ -136,7 +136,7 @@
 						<td><?php echo $inscritos;?></td>
 						<td><?php echo $confirmados;?></td>
 						<td><?php echo $inscritos-$confirmados;?></td>
-						<td><?php echo "R$ ".($confirmados*270).",00";?></td>
+						<td><?php echo "R$ ".number_format(($confirmados*270), 2, ',', '.');?></td>
 					</tr>
 				</table>
 
