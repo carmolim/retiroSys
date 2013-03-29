@@ -498,17 +498,6 @@
 	            $inscrito->setRG($_POST["rg"]); 
 	            $inscrito->setCPF($_POST["cpf"]);             
 
-	            printf("Nome: %s <br>",$inscrito->getNome());
-	            printf("Sobrenome: %s <br>",$inscrito->getSobrenome()); 
-	            printf("E-mail: %s <br>", $inscrito->getEmail()); 
-	            printf("Senha: %d <br>",$inscrito->getSenha()); 
-	            printf("Sexo: %s <br>",$inscrito->getSexo()); 
-	            printf("Data de Nascimento: %d/%d/%d <br>",$inscrito->getDiaNasc(),$inscrito->getMesNasc(),$inscrito->getAnoNasc()); 
-	            printf("RG: %s <br>",$inscrito->getRG()); 
-	            printf("CPF: %s <br>",$inscrito->getCPF()); 
-	            ////////////////////
-
-
 	            //Outras informações
 	            ////////////////////
 	            $inscrito->setCelular($_POST["celular"]);
@@ -519,16 +508,6 @@
 	            $inscrito->setEstado($_POST["estado"]);
 	            $inscrito->setAdventista($_POST["adventista"]);
 	            $inscrito->setIgreja($_POST["igreja"]);
-
-	            printf("Celular: %s<br>",$inscrito->getCelular());
-	            printf("Telefone: %s<br>",$inscrito->getTelefone());
-	            printf("Profissão: %s<br>",$inscrito->getProfissao());
-	            printf("Estado Civil: %s<br>",$inscrito->getEstadoCivil());
-	            printf("Cidade: %s<br>",$inscrito->getCidade());
-	            printf("Estado: %s<br>",$inscrito->getEstado());
-	            printf("Adventista?: %s<br>",$inscrito->getAdventista());
-	            printf("Igreja: %s<br>",$inscrito->getIgreja());
-	            ////////////////////
 	        	
 	            //saúde
 	            ///////
@@ -538,12 +517,6 @@
 	            $inscrito->setAlergia($_POST["alergia"]);
 	            $inscrito->setCuidado($_POST["cuidado_especial"]);
 
-	            printf("Contato de Emergência: %s<br>",$inscrito->getContatoEmergencia());
-	            printf("Telefone do Contato: %s<br>",$inscrito->getTelefoneContato());
-	            printf("Doenca: %s<br>",$inscrito->getDoenca());
-	            printf("Alergia: %s<br>",$inscrito->getAlergia());
-	            printf("Cuidados Especiais: %s<br>",$inscrito->getCuidado());
-	            ///////
 	            // locomoção
 	            $inscrito->setPrecisaCarona($_POST["precisa_carona"]);
 	            $inscrito->setVagas($_POST["vagas"]);
@@ -624,7 +597,7 @@
 
 	            mail($recipient, $subject, $formcontent, $mailheader) or die("Erro no envio para o inscrito");
 
-	            echo "<script>window.open(\"inscrito_sucesso.php\",'_self')</script>"; 
+	            echo "<script>window.open(\"inscrito_sucesso.php?nome=".$inscrito->getNome()."\",'_self')</script>"; 
 	        }
         }
 	?>

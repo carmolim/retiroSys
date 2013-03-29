@@ -461,7 +461,6 @@
                  <br />
                  <br />
                  É obrigatório o envio do comprovante de depósito ou transferência para o seguinte email: <br />
-                 
                  <a href="mailto: muri.o.alves@gmail.com?Subject=Comprovante%20de%20pagamento">muri.o.alves@gmail.com</a>
                       <br />
                       <br />
@@ -471,7 +470,8 @@
                       <td width="304" class="opcao">
                         <label>
                             <br />
-                            <input name="forma_pagto" type="radio" id="dinheiro" value="dinheiro" checked="checked" onclick="styleToggle(this)"/>
+                            <input name="forma_pagto" type="radio" id="dinheiro" value="dinheiro" 
+                                <?php if ($inscrito->getFormaPagamento() == "dinheiro") echo 'checked="checked"';?> onclick="styleToggle(this)"/>
                             <br />
                             Dinheiro <br />
                             R$ 270,00
@@ -483,7 +483,8 @@
                       <td width="297" class="opcao">
                         <label>
                             <br />
-                            <input name="forma_pagto" type="radio" id="deposito_transferencia" value="deposito_transferencia" onclick="styleToggle(this)"/>
+                            <input name="forma_pagto" type="radio" id="deposito_transferencia" value="deposito_transferencia" 
+                                <?php if ($inscrito->getFormaPagamento() == "deposito_transferenc") echo 'checked="checked"';?> onclick="styleToggle(this)"/>
                             <br />
                             Depósito ou
                             Transferência<br />
@@ -495,7 +496,8 @@
                       <td width="297" class="opcao">
                         <label>
                             <br />
-                            <input name="forma_pagto" type="radio" id="pagseguro" value="pagseguro" onclick="styleToggle(this)"/>
+                            <input name="forma_pagto" type="radio" id="pagseguro" value="pagseguro" 
+                                <?php if ($inscrito->getFormaPagamento() == "pagseguro") echo 'checked="checked"';?> onclick="styleToggle(this)"/>
                             <br />
                             PagSeguro R$ 300,00*
                             <br />

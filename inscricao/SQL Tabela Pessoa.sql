@@ -13,8 +13,8 @@ create table Pessoa
 	dia_nasc int,
 	mes_nasc int,
 	ano_nasc int,
-	rg varchar(10) unique  NOT NULL,
-	cpf varchar(11) unique  NOT NULL,
+	rg varchar(10) NOT NULL,
+	cpf varchar(11) NOT NULL,
 	
 	celular varchar(13) NOT NULL,
 	telefone varchar(13),

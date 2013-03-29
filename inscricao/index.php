@@ -129,15 +129,22 @@
 	            $query_senha = "SELECT senha FROM Pessoa WHERE email = '".$_POST["username"]."'";
 	            if (@mysql_result(mysql_query($query_senha),0) == $_POST["password"])
 	            {
-	                $query_login = "SELECT id_pessoa FROM Pessoa WHERE email = '".$_POST["username"]."'";
-	                $id = mysql_result(mysql_query($query_login),0) or die  ("PROBLEMA");
+	                
 
-	                echo "<script>window.open(\"update_inscricao.php?id=".$id."\",'_self')</script>";
+	                if($_POST["username"] == 'admin@ibr.com.br')
+	                {
+	                	echo "<script>window.open(\"admin.php\",'_self')</script>";	
+	                }
+	                else
+	                {
+	                	$query_login = "SELECT id_pessoa FROM Pessoa WHERE email = '".$_POST["username"]."'";
+	                	$id = mysql_result(mysql_query($query_login),0) or die  ("PROBLEMA COM O SERVIDOR");
+	                	echo "<script>window.open(\"update_inscricao.php?id=".$id."\",'_self')</script>";	                	
+	            	}
 	            }
-	            
 	            else
 	            {
-	                echo "<script>alert(\"Ops! Usuário e Senha não conferem\")</script>";
+	                echo "<script>alert(\"Ops! Usuário e Senha não conferem.\")</script>";
 	            }
 	        }
 		DesconectarBanco();
