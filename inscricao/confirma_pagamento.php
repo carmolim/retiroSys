@@ -46,9 +46,8 @@
                     $id = $_GET['id'];
                     echo "Aguarde...";
                     $query = "UPDATE Pessoa SET pag_efetuado = 'SIM' WHERE id_pessoa =".$id;
-                    echo $query;
                     mysql_query($query) or die ("ERRO NO BANCO DE DADOS");
-                    echo "<script>window.open(\"admin.php\",'_self')</script>";
+                    echo "<script>window.open(\"admin.php?permission=true\",'_self')</script>";
                     DesconectarBanco();
                 ?>
             </div>

@@ -133,7 +133,7 @@
 
 	                if($_POST["username"] == 'admin@ibr.com.br')
 	                {
-	                	echo "<script>window.open(\"admin.php\",'_self')</script>";	
+	                	echo "<script>window.open(\"admin.php?permission=true\",'_self')</script>";	
 	                }
 	                else
 	                {

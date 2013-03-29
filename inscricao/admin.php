@@ -48,6 +48,10 @@
 			</div>			
 		
 			<div id="box">
+				<?php 
+					if (! isset($_GET['permission']))
+					die ("SEM PERMISSÃO DE ACESSO");
+				?>
 				<table width="1600" border="1" cellpadding="4" cellspacing="10">
 					<tr>
 						<th>Nome</th>
@@ -66,45 +70,52 @@
 						<th>Status do Pagamento</th>
 					</tr>
 					<?php
+						$inscritos = $confirmados = 0;
 						ConectarBanco(); 
-						$result = mysql_query("SELECT * FROM Pessoa");
+						$result = mysql_query("SELECT * FROM Pessoa ORDER BY nome");
 
 						while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-							echo "<tr>";
+							if ($row["email"] != "admin@ibr.com.br")
+							{
+								$inscritos++;
+								echo "<tr>";
+								echo "<td>".$row["nome"]." ".$row["sobrenome"]."</td>";
+								echo "<td>".$row["email"]."</td>";
+								echo "<td>".$row["dia_nasc"]."/".$row["mes_nasc"]."/".$row["ano_nasc"]."</td>";
+								echo "<td>".$row["rg"]."</td>";
+								echo "<td>".$row["cpf"]."</td>";
+								echo "<td>".$row["celular"]."</td>";
+								echo "<td>".$row["telefone"]."</td>";
+								echo "<td>".$row["estado_civil"]."</td>";
+								echo "<td>".$row["cidade"]."-".$row["estado"]."</td>";
+								echo "<td>".$row["igreja"]."</td>";
+								//Carona
+								if ($row["precisa_carona"] == 'S')
+									echo "<td>Precisa</td>";
+								else
+									echo "<td>Não</td>";
+								//Vagas no carro
+								if ($row["vagas_carro"] != 0)
+									echo "<td>".$row["vagas_carro"]." Vagas</td>";
+								else if ($row["vagas_carro"] == 1)
+									echo "<td>1 Vaga</td>";
+								else echo "<td></td>";
+								//Forma de pagamento
+								if ($row["forma_pagamento"] == "dinheiro")
+									echo "<td>Dinheiro</td>";
+								else if ($row["forma_pagamento"] == "deposito_transferenc")
+									echo "<td>Depósito/Transferência</td>";
+								else echo "<td>PagSeguro</td>";
 
-							echo "<td>".$row["nome"]." ".$row["sobrenome"]."</td>";
-							echo "<td>".$row["email"]."</td>";
-							echo "<td>".$row["dia_nasc"]."/".$row["mes_nasc"]."/".$row["ano_nasc"]."</td>";
-							echo "<td>".$row["rg"]."</td>";
-							echo "<td>".$row["cpf"]."</td>";
-							echo "<td>".$row["celular"]."</td>";
-							echo "<td>".$row["telefone"]."</td>";
-							echo "<td>".$row["estado_civil"]."</td>";
-							echo "<td>".$row["cidade"]."-".$row["estado"]."</td>";
-							echo "<td>".$row["igreja"]."</td>";
-							//Carona
-							if ($row["precisa_carona"] == 'S')
-								echo "<td>Precisa</td>";
-							else
-								echo "<td>Não</td>";
-							//Vagas no carro
-							if ($row["vagas_carro"] != 0)
-								echo "<td>".$row["vagas_carro"]." Vagas</td>";
-							else if ($row["vagas_carro"] == 1)
-								echo "<td>1 Vaga</td>";
-							else echo "<td></td>";
-							//Forma de pagamento
-							if ($row["forma_pagamento"] == "dinheiro")
-								echo "<td>Dinheiro</td>";
-							else if ($row["forma_pagamento"] == "deposito_transferenc")
-								echo "<td>Depósito/Transferência</td>";
-							else echo "<td>PagSeguro</td>";
-
-							if ($row["pag_efetuado"] == "NAO")
-								echo "<td><button onclick=\"window.open('confirma_pagamento.php?id=".$row["id_pessoa"]."','_self')\">Confirmar Pagamento</button></td>";
-							else
-								echo "<td>Confirmado</td>";
-						    echo "</tr>";
+								if ($row["pag_efetuado"] == "NAO")
+									echo "<td><button onclick=\"window.open('confirma_pagamento.php?id=".$row["id_pessoa"]."','_self')\">Confirmar Pagamento</button></td>";
+								else
+								{
+									$confirmados++;
+									echo "<td>Confirmado</td>";
+								}
+							    echo "</tr>";
+							}
 						}
 
 						mysql_free_result($result);
@@ -112,6 +123,23 @@
 						DesconectarBanco();
 					?>
 				</table>
+				<br>
+				<h1>Informações adicionais</h1>	
+				<table width="350" border="1" cellpadding="4" cellspacing="10">
+					<tr>
+						<th>Inscritos</th>
+						<th>Pagos</th>
+						<th>Não Pagos</th>
+						<th>Dinheiro em Caixa</th>
+					</tr>
+					<tr>
+						<td><?php echo $inscritos;?></td>
+						<td><?php echo $confirmados;?></td>
+						<td><?php echo $inscritos-$confirmados;?></td>
+						<td><?php echo "R$ ".($confirmados*270).",00";?></td>
+					</tr>
+				</table>
+
 			</div>
 			<div class="center">
 				<br />bomretirodeinverno ©	
