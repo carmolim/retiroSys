@@ -416,7 +416,7 @@
                  <br />
                  É obrigatório o envio do comprovante de depósito ou transferência para o seguinte email: <br />
                  
-                 <a href="mailto: muri.o.alves@gmail.com?Subject=Comprovante%20de%20pagamento">muri.o.alves@gmail.com</a>
+                 <a href="mailto: kaminskao@hotmail.com?Subject=Comprovante%20de%20pagamento">kaminskao@hotmail.com</a>
                       <br />
                       <br />
                      Escolha uma das formas de pagamento a seguir:</p>
@@ -561,21 +561,46 @@
 	        	echo $query;
 	        				
 	        	mysql_query($query) or die  ("\nNao foi possivel executar a QUERY");
+
+
+	        	$totalPagos = mysql_fetch_array(mysql_query("SELECT COUNT(*)-1 AS pagos FROM Pessoa WHERE pag_efetuado = 'SIM'"));
+
+	        	$totalInscritos = mysql_fetch_array(mysql_query("SELECT COUNT(*)-1 AS total FROM Pessoa"));       	
+
+
+
 	        	
 	        	DesconectarBanco();
 
 
 	            // EMAIL PARA OS RESPONSÁVEIS
 
+	            if ($inscrito->getFormaPagamento() == "dinheiro")
+					$formaPagamento = "Dinheiro";
+				else if ($inscrito->getFormaPagamento() == "deposito_transferencia")
+					$formaPagamento = "Depósito ou Transferência";
+				else
+					$formaPagamento = "PagSeguro";
+
+
 	            // corpo da mensagem
-	            $formcontent = "Nome do inscrito: ".$inscrito->getNome()." ".$inscrito->getSobrenome()." \n Celular: ".$inscrito->getCelular()." \n Telefone: ".$inscrito->getTelefone()." \n  Forma de pagamento:??";
+	            $formcontent =
+	            "Nome do inscrito: ".$inscrito->getNome()." ".$inscrito->getSobrenome()."
+	           	Celular: ".$inscrito->getCelular()." 
+	            Telefone: ".$inscrito->getTelefone()."
+	            Forma de pagamento: ".$formaPagamento. "
+	            Total de inscritos: ".$totalInscritos["total"]."
+	            Pagamentos efetuados: ".$totalPagos["pagos"]."/200";      
+	         
 	            //echo $formcontent;
 	            // pessoas que não receber os emails
 	            $recipient = "carmolim@gmail.com, jonatashille@gmail.com";
 	            // assunto do email
 	            $subject = "Mais um inscrito...";
 	            //cabeçalho do email
-	            $mailheader = "From: ".$inscrito->getEmail();
+	            $mailheader = "From: ".$inscrito->getNome()." ";
+				$mailheader .= $inscrito->getSobrenome()." - ";
+				$mailheader .= $inscrito->getEmail();	            
 	            // método do PHP para enviar o email
 	            mail($recipient, $subject, $formcontent, $mailheader) or die("Erro no envio para os responsáveis"); 
 	            
@@ -612,10 +637,7 @@
 					              <br>
 					              <font face="sans-serif, Helvetiva, Arial" color="#fff" size="2">
 				';
-
-	            
-               
-              
+      
 
 	            // se vai pagar com dinheiro
 	            if ($inscrito->getFormaPagamento()=="dinheiro")
@@ -628,7 +650,7 @@
 
 			            <a href=\"http://www.facebook.com/gabriel.kaminski.5\">Gabriel Kaminski</a>
 						<br>
-						kaminskao[at]hotmail.com
+						kaminskao@hotmail.com
 						<br>
 						41 8416.2559
 						<br>
@@ -645,18 +667,19 @@
 	            {
 	            	$formcontent .=
 	            	
-			            $inscrito->getNome().', seu cadastro foi feito com sucesso, agora só falta dar continuidade ao pagamento.<br>
-			            Faça seu depósito ou transferência para essa conta: HSBC Ag. 0054-0 Cc. 08874-71 CNPJ. 79.080.602/0039-29,<br>
-			            o beneficiado é União Sul Brasileira da Igreja Adventista do 7º dia. <br>
-			            Depois envie um comprovante para: kaminskao[at]hotmail.com.
-			            <br>
+			            $inscrito->getNome().', seu cadastro foi feito com sucesso, agora só falta dar continuidade ao pagamento.
+			            <br><br>
+			            Faça seu depósito ou transferência para essa conta: HSBC Ag. 0054-0 Cc. 08874-71 CNPJ. 79.080.602/0039-29,
+			            o beneficiado é União Sul Brasileira da Igreja Adventista do 7º dia.
+			            <br><br>
+			            Depois envie um comprovante para: kaminskao@hotmail.com.
+			            <br><br>
 			            Lembramos que o pagamento deverá ser feito até o dia 17 de maio.
-			            <br>
+			            <br><br>
 		                Confira nossa <a href="http://bomretirodeinverno.com.br/levar.html">página</a> informando o que você deve levar e o que você não deve.<br>
 		                <br>
 		               	Obrigado!
-	            	';
-	            	# code...
+	            	';	            	
 	            }
 
 	            // se vai pagar com pagseguro
@@ -698,7 +721,7 @@
 				
                
 	            // destinatário
-	            $recipient = $inscrito->getEmail();
+				$recipient = $inscrito->getEmail();	            
 	            // assunto
 	            $subject = "Bom Retiro de Inverno - Inscrição"; 
 	            // remetente

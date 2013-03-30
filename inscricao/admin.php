@@ -20,7 +20,7 @@
 			
 			#content
 			{	
-				width: 1060px;
+				width: 1200px;
 				margin-left: auto;
 				margin-right: auto;
 			}
@@ -53,7 +53,7 @@
 					die ("SEM PERMISSÃO DE ACESSO");
 				?>
 
-				<table width="980" cellpadding="0" cellspacing="0">
+				<table width="1050" cellpadding="0" cellspacing="0">
 					<tr align= "left">
 						<td>Nome</td>
 						<td>e-mail</td>

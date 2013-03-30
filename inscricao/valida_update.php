@@ -127,7 +127,7 @@
         
             <div id="box">
                 <?php
-                    echo $inscrito->getNome().', seus dados foram alterados com sucesso.';
+                    echo $inscrito->getNome().'<center>, seus dados foram alterados com sucesso.</center>';
                 ?>
             </div>
             <div class="center">

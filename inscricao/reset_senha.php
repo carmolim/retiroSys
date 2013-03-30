@@ -83,7 +83,47 @@
 						// EMAIL PARA OS RESPONSÁVEIS
 						
 						// corpo da mensagem
-						$formcontent = "Essa é sua nova senha: $senha";
+						$content =
+						'
+							<html>
+							  <head>
+							  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+							  </head>
+
+							  <body bgcolor="#FFFFFF">
+
+							    <table width="650px" border="0" cellspacing="20" cellpadding="0" background="http://bomretirodeinverno.com.br/img/background.jpg" style="padding:10px">
+							      <tr>
+							        <td>
+							          <a href="http://bomretirodeinverno.com.br/" alt="Site: http://bomretirodeinverno.com.br/">
+							            <img src="http://bomretirodeinverno.com.br/emkt/img/no-limite.png" alt="No Limite da Graça" width="350">
+							          </a> 
+							        </td>
+							          <td>
+							            <a href="https://www.facebook.com/jovensibr" alt="Facebook: Jovens Bom Retiro">
+							              <img src="http://bomretirodeinverno.com.br/emkt/img/jovensIBR.gif" alt="Jovens Bom Retiro" width="71" height="71">
+							            </a>
+							          </td>
+							        </tr>
+							        <tr>
+							          <td colspan="2"> 
+							            <br />
+							            <hr style="margin-top:-20px">
+							            <p>
+							              <br>
+							              <font face="sans-serif, Helvetiva, Arial" color="#fff" size="2">
+							                '.$inscrito->getNome.', a sua senha agora é '.$senha.' você pode fazer o seu <a href="http://bomretirodeinverno.com.br/inscricao">login</a> e escolher uma nova senha.
+							                <br>
+							                <br>
+							               Obrigado!
+							              </font>
+							           </p>
+							          </td>
+							        </tr>
+							    </table>
+							  </body>
+							</html>
+						';						
 						
 						// pessoas que não receber os emails
 						$recipient = $inscrito->getEmail();			
@@ -105,7 +145,7 @@
 						echo $inscrito->getNome();
 						echo ', acambamos de enviar uma nova senha para o seu e-mail.
 						O e-mail deve estar chegando em breve, caso não receba o email
-						entre em contato com o <a href="mailto:carmolim@gmail.com?subject=Bom&Retiro%20de%20Inverno&body=Senha%20perdida%20do%20$incrito->getNome%20$inscrito->getSobrenome">Augusto Carmo</a>.';
+						entre em contato com o <a href="mailto:carmolim@gmail.com?subject=Bom&Retiro%20de%20Inverno&body=Senha%20perdida%20do%20$incrito->getNome%20$inscrito->getSobrenome">Augusto</a>.';
 		    		}
 
 		    		else

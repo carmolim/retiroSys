@@ -461,7 +461,7 @@
                  <br />
                  <br />
                  É obrigatório o envio do comprovante de depósito ou transferência para o seguinte email: <br />
-                 <a href="mailto: muri.o.alves@gmail.com?Subject=Comprovante%20de%20pagamento">muri.o.alves@gmail.com</a>
+                 <a href="mailto: kaminskao@hotmail.com?Subject=Comprovante%20de%20pagamento">kaminskao@hotmail.com</a>
                       <br />
                       <br />
                      Escolha uma das formas de pagamento a seguir:</p>

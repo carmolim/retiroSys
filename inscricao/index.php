@@ -92,10 +92,15 @@
 	
 	<div id="content">
 		<div id="inscricao">
-			<h1>Inscrição</h1>
-			<a href="inscricao.php"><img src="../img/snow_flake.png" alt="snow flake" width="150px"/></a>
-			<br />
-			<a href="inscricao.php">Inscreva - se!</a>
+			<center>
+				<h1>Inscreva-se</h1>
+				<a href="inscricao.php"><img src="../img/snow_flake.png" alt="snow flake" width="150px"/></a>
+				<br />
+				
+				<input onClick="parent.location='inscricao.php'" value="Inscreva-se" class="button">
+			</center>
+			
+			<!-- <a href="inscricao.php" class="button">Inscreva - se!</a> -->
 		</div>
 		
 		<div id="form">		
@@ -104,7 +109,7 @@
 			<form id='login' action=<?php echo $_SERVER['PHP_SELF']; ?> method='post' name='login'>
 				<div>
 					<br>
-					<label for='username'> E-mail:</label>
+					<label for='username'>E-mail:</label>
 					<br />
 					<input type='text' name='username' id='username' maxlength="50"/><br /><br />
 				</div>

@@ -54,11 +54,10 @@ select
 
 .button
 {
+	color: #ffffff;
 	width: 100px;
 	border: 0;
-	//text-align: center;
-	background-color: #335177;
-	color: #ffffff;
+	background-color: #335177;	
 	text-align: center;
 }
 
