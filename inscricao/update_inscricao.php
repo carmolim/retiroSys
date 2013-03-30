@@ -499,9 +499,9 @@
                             <input name="forma_pagto" type="radio" id="pagseguro" value="pagseguro" 
                                 <?php if ($inscrito->getFormaPagamento() == "pagseguro") echo 'checked="checked"';?> onclick="styleToggle(this)"/>
                             <br />
-                            PagSeguro R$ 300,00*
+                            PagSeguro R$ 285,00*
                             <br />
-                            até 10x
+                            até 10x (com juros)
                             <br />
                             <br />
                         </label>

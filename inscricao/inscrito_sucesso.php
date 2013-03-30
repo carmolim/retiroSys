@@ -46,7 +46,7 @@
 			<div id="box">
 				<?php
 					$nome = $_GET['nome'];
-		    		echo $nome.', sua inscrição foi realizada com sucesso. Enviamos um email informando como proceder como pagamento.
+		    		echo $nome.', sua inscrição foi realizada com sucesso. Enviamos um email informando como proceder com o pagamento.
 		    		   Caso precise fazer alguma atualização em seu cadastro utilize seu e-mail e senha para login<br/><br/>
 		    		   Veja <a href="../levar.html">aqui</a> o que você precisa levar para o acampamento.';
 		    		?>

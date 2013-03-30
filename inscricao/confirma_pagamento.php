@@ -35,7 +35,7 @@
     <body>
         <div id="content">
             <div id="topo">
-                <div id="logo"><img src="../img/snow_flake.png" alt="snow flake" width="250px"/></div>  
+                <div id="logo"><a href="../index.html"><img src="../img/snow_flake.png" alt="snow flake" width="250px"/></div>  
                 <h1>NO LIMITE DA GRAÇA</h1>         
                 <hr />          
             </div>          

@@ -451,9 +451,9 @@
                             <br />
                             <input name="forma_pagto" type="radio" id="pagseguro" value="pagseguro" onclick="styleToggle(this)"/>
                             <br />
-                            PagSeguro R$ 300,00*
+                            PagSeguro R$ 285,00*
                             <br />
-                            até 10x
+                            até 10x (com juros)
                             <br />
                             <br />
                         </label>
@@ -622,7 +622,7 @@
 	            {
 	            	$formcontent .=
 	            	
-			            $inscrito->getNome();.',  seu cadastro foi feito com sucesso, agora só falta dar continuidade ao pagamento.
+			            $inscrito->getNome().',  seu cadastro foi feito com sucesso, agora só falta dar continuidade ao pagamento.
 			            <br>Para pagar em dinheiro você deve procurar o nosso responsável financeiro na
 			            <a href="http://maps.google.com/maps/place?q=igreja+adventista+Curitiba+-+PR,+Brasil&hl=en&cid=2667252350756669069" target="_blank">Igreja do Bom Retiro</a>.<br><br>
 
@@ -645,7 +645,7 @@
 	            {
 	            	$formcontent .=
 	            	
-			            $inscrito->getNome();.', seu cadastro foi feito com sucesso, agora só falta dar continuidade ao pagamento.<br>
+			            $inscrito->getNome().', seu cadastro foi feito com sucesso, agora só falta dar continuidade ao pagamento.<br>
 			            Faça seu depósito ou transferência para essa conta: HSBC Ag. 0054-0 Cc. 08874-71 CNPJ. 79.080.602/0039-29,<br>
 			            o beneficiado é União Sul Brasileira da Igreja Adventista do 7º dia. <br>
 			            Depois envie um comprovante para: kaminskao[at]hotmail.com.
@@ -664,7 +664,7 @@
 	            {
 	            	$formcontent .=
 	            	
-			            $inscrito->getNome();.', seu cadastro foi feito com sucesso, agora só falta dar continuidade ao pagamento. <br> Clique no botão do PagSeguro para prosseguir com o pagamento.
+			            $inscrito->getNome().', seu cadastro foi feito com sucesso, agora só falta dar continuidade ao pagamento. <br> Clique no botão do PagSeguro para prosseguir com o pagamento.
 			            Quermos lembrar que o pagamento pelo PagSeguro inclui apenas as taxas de administração, ainda serão adicionados os juros do parcelamento <br><br>
 
 						<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
