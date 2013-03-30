@@ -17,7 +17,7 @@
 			{				
 				padding: 8px;
 			}
-			
+
 			#content
 			{	
 				width: 1200px;
@@ -37,6 +37,25 @@
 				padding: 30px;
 			}
 		</style>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		
+		<script>
+		  $(document).ready(function()
+		  {
+    			$("#lista tr").not(':first').hover(function ()
+    			{
+			   		$(this).css("background","rgba(255, 255, 255, .2)");
+			  	}, 
+
+			  	function ()
+			  	{
+			    	$(this).css("background","");
+			    }
+			);
+  		});
+			
+		</script>
+	
 	</head>
 	<body>
 		<div id="content">
@@ -53,7 +72,7 @@
 					die ("SEM PERMISSÃO DE ACESSO");
 				?>
 
-				<table width="1050" cellpadding="0" cellspacing="0">
+				<table id="lista" width="1050" cellpadding="0" cellspacing="0">
 					<tr align= "left">
 						<td>Nome</td>
 						<td>e-mail</td>
@@ -131,7 +150,7 @@
 				</table>
 				<br>
 				<h1>Informações adicionais</h1>	
-				<table width="450" border="0" cellpadding="4" cellspacing="10">
+				<table width="450" border="0" cellpadding="0" cellspacing="0">
 					<tr>
 						<td>Inscritos</td>
 						<td>Pagos</td>
