@@ -465,6 +465,12 @@
 		<input type="submit" name="submit" value="Enviar" class="button">
 		</form>
 		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+	</body>
+</html>
 
 
 	<?php
@@ -585,22 +591,55 @@
 
 	            // corpo da mensagem
 	            $formcontent =
-	            "Nome do inscrito: ".$inscrito->getNome()." ".$inscrito->getSobrenome()."
-	           	Celular: ".$inscrito->getCelular()." 
-	            Telefone: ".$inscrito->getTelefone()."
-	            Forma de pagamento: ".$formaPagamento. "
-	            Total de inscritos: ".$totalInscritos["total"]."
-	            Pagamentos efetuados: ".$totalPagos["pagos"]."/200";      
+	            '	
+	            <html>
+				  <head>
+				  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+				  </head>
+
+				  <body bgcolor="#FFFFFF">
+			            <table width="400" border="0">
+						  <tr>
+						    <td width="155">Nome do inscrito: <br />
+						     </td>
+						    <td>'.$inscrito->getNome().' '.$inscrito->getSobrenome().'</td>
+						  </tr>
+						  <tr>
+						    <td>Celular: </td>
+						    <td>'.$inscrito->getCelular().'</td>
+						  </tr>
+						  <tr>
+						    <td>Telefone:</td>
+						    <td>'.$inscrito->getTelefone().'</td>
+						  </tr>
+						  <tr>
+						    <td>Forma de pagamento: </td>
+						    <td>'.$formaPagamento.'</td>
+						  </tr>
+						  <tr>
+						    <td>Total de inscritos: </td>
+						    <td>'.$totalInscritos["total"].'</td>
+						  </tr>
+						  <tr>
+						    <td>Pagamentos efetuados: </td>
+						    <td>'.$totalPagos["pagos"].'/200</td>
+						  </tr>
+						</table>
+					</body>
+				</html>
+				';      
 	         
 	            //echo $formcontent;
 	            // pessoas que não receber os emails
 	            $recipient = "carmolim@gmail.com, jonatashille@gmail.com";
 	            // assunto do email
-	            $subject = "Mais um inscrito...";
-	            //cabeçalho do email
-	            $mailheader = "From: ".$inscrito->getNome()." ";
-				$mailheader .= $inscrito->getSobrenome()." - ";
-				$mailheader .= $inscrito->getEmail();	            
+	            $subject = "Mais um inscrito...";	            
+	            // remetente
+				$mailheader = "From:".$inscrito->getNome()." ".$inscrito->getSobrenome()." <".$inscrito->getEmail().">\r\n";
+				//cabeçalho do email	     	
+				$mailheader .= "MIME-Version: 1.0\r\n";
+				$mailheader .= "Content-Type: text/html; charset=UTF-8\r\n";
+	                  
 	            // método do PHP para enviar o email
 	            mail($recipient, $subject, $formcontent, $mailheader) or die("Erro no envio para os responsáveis"); 
 	            
@@ -716,7 +755,7 @@
 				    </table>
 				  </body>
 				</html>
-							';
+				';
 
 				
                
@@ -736,5 +775,4 @@
 	        }
         }
 	?>
-	</body>
-</html>
+

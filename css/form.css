@@ -59,6 +59,9 @@ select
 	border: 0;
 	background-color: #335177;	
 	text-align: center;
+	cursor: pointer;
+	padding: 0px;
+	
 }
 
 .button:hover

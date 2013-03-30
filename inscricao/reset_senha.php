@@ -112,7 +112,7 @@
 							            <p>
 							              <br>
 							              <font face="sans-serif, Helvetiva, Arial" color="#fff" size="2">
-							                '.$inscrito->getNome.', a sua senha agora é '.$senha.' você pode fazer o seu <a href="http://bomretirodeinverno.com.br/inscricao">login</a> e escolher uma nova senha.
+							                '.$inscrito->getNome().', a sua senha agora é '.$senha.' você pode fazer o seu <a href="http://bomretirodeinverno.com.br/inscricao">login</a> e escolher uma nova senha.
 							                <br>
 							                <br>
 							               Obrigado!
