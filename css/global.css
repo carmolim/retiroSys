@@ -22,12 +22,10 @@ table, caption, tbody, tfoot, thead, tr, th, td
 
 body
 {
-	//color: white;
+
 	color:#283c4f;
-	//background-size: 2240px 1400px;
 	font: .8em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	background: url(../img/background.jpg) no-repeat center #8fb0cf;
-	//background: url(../img/pattern.jpg) center #8fb0cf;
 	background-position: top;
 	background-attachment:fixed;
 	
@@ -57,8 +55,9 @@ h1
 }
 
 h2
-{
-	font-size: 1em;
+{	
+	color: white;
+	font-size: 1.4em;
 	font-family: 'Josefin Slab', sans-serif;
 	font-weight: 600;
 }

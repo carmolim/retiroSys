@@ -582,9 +582,121 @@
 
 	            // EMAIL PARA O INSCRITO
 
-	            // corpo da mensagem
-	            // tem que colocar a mensagem com a forma de pagamento etc... 
-	            $formcontent = "teste";
+	            $formcontent =
+	            '
+		            <html>
+					  <head>
+					  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+					  </head>
+
+					  <body bgcolor="#FFFFFF">
+
+					    <table width="650px" border="0" cellspacing="20" cellpadding="0" background="http://bomretirodeinverno.com.br/img/background.jpg" style="padding:10px">
+					      <tr>
+					        <td>
+					          <a href="http://bomretirodeinverno.com.br/" alt="Site: http://bomretirodeinverno.com.br/">
+					            <img src="http://bomretirodeinverno.com.br/emkt/img/no-limite.png" alt="No Limite da Graça" width="350">
+					          </a> 
+					        </td>
+					          <td>
+					            <a href="https://www.facebook.com/jovensibr" alt="Facebook: Jovens Bom Retiro">
+					              <img src="http://bomretirodeinverno.com.br/emkt/img/jovensIBR.gif" alt="Jovens Bom Retiro" width="71" height="71">
+					            </a>
+					          </td>
+					        </tr>
+					        <tr>
+					          <td colspan="2"> 
+					            <br />
+					            <hr style="margin-top:-20px">
+					            <p>
+					              <br>
+					              <font face="sans-serif, Helvetiva, Arial" color="#fff" size="2">
+				';
+
+	            
+               
+              
+
+	            // se vai pagar com dinheiro
+	            if ($inscrito->getFormaPagamento()=="dinheiro")
+	            {
+	            	$formcontent .=
+	            	
+			            $inscrito->getNome();.',  seu cadastro foi feito com sucesso, agora só falta dar continuidade ao pagamento.
+			            <br>Para pagar em dinheiro você deve procurar o nosso responsável financeiro na
+			            <a href="http://maps.google.com/maps/place?q=igreja+adventista+Curitiba+-+PR,+Brasil&hl=en&cid=2667252350756669069" target="_blank">Igreja do Bom Retiro</a>.<br><br>
+
+			            <a href=\"http://www.facebook.com/gabriel.kaminski.5\">Gabriel Kaminski</a>
+						<br>
+						kaminskao[at]hotmail.com
+						<br>
+						41 8416.2559
+						<br>
+						<br>
+			            Lembramos que o pagamento deverá ser feito até o dia 17 de maio.
+			            <br>
+						Confira nossa <a href="http://bomretirodeinverno.com.br/levar.html">página</a> informando o que você deve levar e o que você não deve.<br>
+		                <br>
+		               	Obrigado!	
+	            	';
+	            }
+	            // se vai pagar com depósito
+	            else if ($inscrito->getFormaPagamento()=="deposito_transferencia")
+	            {
+	            	$formcontent .=
+	            	
+			            $inscrito->getNome();.', seu cadastro foi feito com sucesso, agora só falta dar continuidade ao pagamento.<br>
+			            Faça seu depósito ou transferência para essa conta: HSBC Ag. 0054-0 Cc. 08874-71 CNPJ. 79.080.602/0039-29,<br>
+			            o beneficiado é União Sul Brasileira da Igreja Adventista do 7º dia. <br>
+			            Depois envie um comprovante para: kaminskao[at]hotmail.com.
+			            <br>
+			            Lembramos que o pagamento deverá ser feito até o dia 17 de maio.
+			            <br>
+		                Confira nossa <a href="http://bomretirodeinverno.com.br/levar.html">página</a> informando o que você deve levar e o que você não deve.<br>
+		                <br>
+		               	Obrigado!
+	            	';
+	            	# code...
+	            }
+
+	            // se vai pagar com pagseguro
+	            else
+	            {
+	            	$formcontent .=
+	            	
+			            $inscrito->getNome();.', seu cadastro foi feito com sucesso, agora só falta dar continuidade ao pagamento. <br> Clique no botão do PagSeguro para prosseguir com o pagamento.
+			            Quermos lembrar que o pagamento pelo PagSeguro inclui apenas as taxas de administração, ainda serão adicionados os juros do parcelamento <br><br>
+
+						<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+						<form target="pagseguro" action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+							<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+							<input type="hidden" name="code" value="4A075401EFEFF91224810F95EF3E6A71" />
+							<input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/99x61-comprar-azul-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+						</form>
+						<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+						<br>
+						<br>
+						O pagamento utilizando o PagSeguro deverá ser feito até o dia 8 de maio.
+						<br>
+	            		Confira nossa <a href="http://bomretirodeinverno.com.br/levar.html">página</a> informando o que você deve levar e o que você não deve.<br>
+		                <br>
+		               	Obrigado!
+	            	';
+	            }
+
+	            $formcontent .=
+	            '
+					        </font>
+				           </p>
+				          </td>
+				        </tr>
+				    </table>
+				  </body>
+				</html>
+							';
+
+				
+               
 	            // destinatário
 	            $recipient = $inscrito->getEmail();
 	            // assunto
@@ -602,5 +714,4 @@
         }
 	?>
 	</body>
-
 </html>

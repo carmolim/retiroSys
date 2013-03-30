@@ -31,13 +31,13 @@
 {
 	width: 680px;
 	height: 100px;
-	//background-color: #f11717;
 	margin-left: 26px;
 }
 
 
 .hasCountdown
 {
+	color: white;
 	font-family: 'Josefin Slab', sans-serif;
 }
 

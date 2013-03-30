@@ -104,7 +104,7 @@
 			<form id='login' action=<?php echo $_SERVER['PHP_SELF']; ?> method='post' name='login'>
 				<div>
 					<br>
-					<label for='username' >E-mail:</label>
+					<label for='username'> E-mail:</label>
 					<br />
 					<input type='text' name='username' id='username' maxlength="50"/><br /><br />
 				</div>
@@ -128,8 +128,7 @@
 	        { 
 	            $query_senha = "SELECT senha FROM Pessoa WHERE email = '".$_POST["username"]."'";
 	            if (@mysql_result(mysql_query($query_senha),0) == $_POST["password"])
-	            {
-	                
+	            {   
 
 	                if($_POST["username"] == 'admin@ibr.com.br')
 	                {

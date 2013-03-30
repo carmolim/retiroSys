@@ -38,7 +38,7 @@
 	<body>
 		<div id="content">
 			<div id="topo">
-				<div id="logo"><img src="../img/snow_flake.png" alt="snow flake" width="250px"/></div>	
+				<div id="logo"><a href="../index.html"><img src="../img/snow_flake.png" alt="snow flake" width="250px"/></a></div>	
 				<h1>NO LIMITE DA GRAÇA</h1>			
 				<hr />			
 			</div>			
@@ -46,10 +46,10 @@
 			<div id="box">
 				<?php
 					$nome = $_GET['nome'];
-		    		echo $nome.', sua inscrição foi realizada com sucesso. Enviamos uma confirmação para o seu email.'.
-		    		   ' Caso precise fazer alguma atualização em seu cadastro utilize seu e-mail e senha para login';
-		    		
-		    	?>
+		    		echo $nome.', sua inscrição foi realizada com sucesso. Enviamos um email informando como proceder como pagamento.
+		    		   Caso precise fazer alguma atualização em seu cadastro utilize seu e-mail e senha para login<br/><br/>
+		    		   Veja <a href="../levar.html">aqui</a> o que você precisa levar para o acampamento.';
+		    		?>
 			</div>
 			<div class="center">
 				<br />bomretirodeinverno ©	

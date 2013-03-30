@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" >
 	<head>
-	<title>Esqueci minha senha</title>
+	<title>Admin - Bom Retiro de Inverno</title>
 	
 		<meta content='pt' http-equiv='content-language'/>
 		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
@@ -12,10 +12,15 @@
 		<link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
 		<link rel="STYLESHEET" type="text/css" href="../css/global.css" />		
 		
-		<style>		
+		<style>	
+			td
+			{				
+				padding: 8px;
+			}
+			
 			#content
 			{	
-				width: 1800px;
+				width: 1060px;
 				margin-left: auto;
 				margin-right: auto;
 			}
@@ -32,12 +37,6 @@
 				padding: 30px;
 			}
 		</style>
-		<script type="text/javascript">
-			function ConfirmarPagamento()
-			{
-
-			}
-		</script>	
 	</head>
 	<body>
 		<div id="content">
@@ -48,26 +47,28 @@
 			</div>			
 		
 			<div id="box">
+
 				<?php 
 					if (! isset($_GET['permission']))
 					die ("SEM PERMISSÃO DE ACESSO");
 				?>
-				<table width="1600" border="1" cellpadding="4" cellspacing="10">
-					<tr>
-						<th>Nome</th>
-						<th>e-mail</th>
-						<th>Data de Nascimento</th>
-						<th>RG</th>
-						<th>CPF</th>
-						<th>Celular</th>
-						<th>Telefone</th>
-						<th>Estado Civil</th>
-						<th>Cidade</th>
-						<th>igreja</th>
-						<th>Carona?</th>
-						<th>Vagas no veículo</th>
-						<th>Forma de Pagamento</th>
-						<th>Status do Pagamento</th>
+
+				<table width="980" cellpadding="0" cellspacing="0">
+					<tr align= "left">
+						<td>Nome</td>
+						<td>e-mail</td>
+						<!-- <td>Data de Nascimento</td> -->
+						<!-- <td>RG</td> -->
+						<!-- <td>CPF</td> -->
+						<td>Celular</td>
+						<td>Telefone</td>
+						<!-- <td>Estado Civil</td> -->
+						<!-- <td>Cidade</td> -->
+						<td>Igreja</td>
+						<td>Carona?</td>
+						<td>Vagas no veículo</td>
+						<td>Forma de Pagamento</td>
+						<td>Status do Pagamento</td>
 					</tr>
 					<?php
 						$inscritos = $confirmados = 0;
@@ -78,16 +79,22 @@
 							if ($row["email"] != "admin@ibr.com.br")
 							{
 								$inscritos++;
-								echo "<tr>";
+
+								if ($row["pag_efetuado"] == "NAO")
+									echo "<tr>";
+								else
+								{
+									echo '<tr style="background: rgba(255, 255, 255, .2)">';									
+								}		
 								echo "<td>".$row["nome"]." ".$row["sobrenome"]."</td>";
-								echo "<td>".$row["email"]."</td>";
-								echo "<td>".$row["dia_nasc"]."/".$row["mes_nasc"]."/".$row["ano_nasc"]."</td>";
-								echo "<td>".$row["rg"]."</td>";
-								echo "<td>".$row["cpf"]."</td>";
+								echo '<td><a href="mailto:'.$row["email"].'">'.$row["email"].'</a></td>';
+								// echo "<td>".$row["dia_nasc"]."/".$row["mes_nasc"]."/".$row["ano_nasc"]."</td>";
+								// echo "<td>".$row["rg"]."</td>";
+								// echo "<td>".$row["cpf"]."</td>";
 								echo "<td>".$row["celular"]."</td>";
 								echo "<td>".$row["telefone"]."</td>";
-								echo "<td>".$row["estado_civil"]."</td>";
-								echo "<td>".$row["cidade"]."-".$row["estado"]."</td>";
+								// echo "<td>".$row["estado_civil"]."</td>";
+								// echo "<td>".$row["cidade"]."-".$row["estado"]."</td>";
 								echo "<td>".$row["igreja"]."</td>";
 								//Carona
 								if ($row["precisa_carona"] == 'S')
@@ -106,7 +113,7 @@
 								else if ($row["forma_pagamento"] == "deposito_transferenc")
 									echo "<td>Depósito/Transferência</td>";
 								else echo "<td>PagSeguro</td>";
-
+								
 								if ($row["pag_efetuado"] == "NAO")
 									echo "<td><button onclick=\"window.open('confirma_pagamento.php?id=".$row["id_pessoa"]."','_self')\">Confirmar Pagamento</button></td>";
 								else
@@ -114,10 +121,9 @@
 									$confirmados++;
 									echo "<td>Confirmado</td>";
 								}
-							    echo "</tr>";
+								echo "</tr>";
 							}
 						}
-
 						mysql_free_result($result);
 
 						DesconectarBanco();
@@ -125,12 +131,12 @@
 				</table>
 				<br>
 				<h1>Informações adicionais</h1>	
-				<table width="350" border="1" cellpadding="4" cellspacing="10">
+				<table width="450" border="0" cellpadding="4" cellspacing="10">
 					<tr>
-						<th>Inscritos</th>
-						<th>Pagos</th>
-						<th>Não Pagos</th>
-						<th>Dinheiro em Caixa</th>
+						<td>Inscritos</td>
+						<td>Pagos</td>
+						<td>Não Pagos</td>
+						<td>Dinheiro em Caixa</td>
 					</tr>
 					<tr>
 						<td><?php echo $inscritos;?></td>
