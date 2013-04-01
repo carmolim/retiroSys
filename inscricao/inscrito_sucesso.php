@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" >
 	<head>
-	<title>Inscrição Efetuada</title>
+	<title>Inscrição Efetuada - Bom Retiro de Inverno</title>
 	
 		<meta content='pt' http-equiv='content-language'/>
 		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" >
     <head>
-        <title>Atualizar Cadastro</title>
+        <title>Atualizar Cadastro - Bom Retiro de Iverno</title>
 
         <meta content='pt' http-equiv='content-language'/>
         <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>

@@ -7,7 +7,7 @@
 	
 	<head>
 	
-	<title>Bom Retiro de Inverno 2013</title>
+	<title>Inscrição - Bom Retiro de Inverno 2013</title>
 	
 		<meta content='pt' http-equiv='content-language'/>
 		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>

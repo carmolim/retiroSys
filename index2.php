@@ -32,13 +32,15 @@
 				width:960px; 
 				margin-left: auto;
 				margin-right: auto;	
-				margin-top: 18px;			
+				margin-top: 18px;		
 			}
 
 			#header
 			{	
-				height: 150px;
+				padding: 30px;				
 				margin-bottom: 18px;
+				text-align: center;
+				/* background-color: rgba(255, 255, 255, 0.2);	*/
 			}
 
 			#navbar
@@ -127,6 +129,7 @@
 			
 			.inscrevase
 			{
+				margin-right: 20px;
 				color: white;
 				display: inline-block;
 				background: #ccc;
@@ -243,7 +246,7 @@
 
 		<div id="site">
 			<div id="header">
-				<!--adfadfad-->
+				<img src="img/limite.png" alt="No Limite da Graça" />
 			</div>
 
 			<div id="navbar">
@@ -255,7 +258,7 @@
 			
 			<div id="defaultCountdown"></div>		
 			<a href="/inscricao/inscricao.php" class="inscrevase">Inscreva-se!</a>
-			<div class="fb-like" data-href="https://www.facebook.com/BomRetiroDeInverno" data-send="false" data-layout="navButton_count" data-width="100" data-show-faces="false" data-font="arial"></div>	
+			<div class="fb-like" data-href="https://www.facebook.com/BomRetiroDeInverno" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>	
 			<!-- <input onClick="parent.location='/inscricao/inscricao.php'" value="Inscreva-se!" class="navButton"> -->
 		
 
@@ -393,7 +396,7 @@
 					    Se você já fez sua inscrição e quer fazer alguma alteração, ou verificar como está a situação do seu pagamento, por favor faça o login ao lado.
 					  </p>					 
 					   </br>
-					   <input onClick="parent.location='/inscricao/inscricao.php'" value="Inscreva-se" class="navButton">
+					   <input onClick="parent.location='/inscricao/inscricao.php'" value="Inscreva-se" class="button">
 					  
 					</div>
 
@@ -411,7 +414,7 @@
 								<input type="password" name="password" id="password" maxlength="50"/><br/>
 							</div>
 								<br />
-								<input type="submit" name="submit" value="Entrar" class="navButton">
+								<input type="submit" name="submit" value="Entrar" class="button">
 								
 								<a href="esqueci_senha.php"> Esqueci minha senha</a>
 						</form>			
@@ -499,6 +502,8 @@
 </html>
 
 <?php
+	require_once("inscricao/conectarBD.php");
+
 	ConectarBanco();
         if(isset($_POST['submit'])) 
         { 
