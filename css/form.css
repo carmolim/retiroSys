@@ -19,7 +19,7 @@ input
 	height: 30px;
 	border: 0px;
 	padding-left: 10px;
-	background: rgb(150, 150, 150); /* Fall-back for browsers that don't support rgba */
+	background: #ccc; /* Fall-back for browsers that don't support rgba */
 	background: rgba(255, 255, 255, .3);
 }
 
@@ -27,7 +27,6 @@ input[type=radio]
 {
 	width: 14px;
 	height: 14px;
-	background-color: orange;
 }
 
 select
@@ -36,9 +35,8 @@ select
 	height:25px;
 	border: 0px;
 	padding-left: 10px;
-	background: rgb(150, 150, 150); /* Fall-back for browsers that don't support rgba */
-	background: rgba(255, 255, 255, .3);
-	
+	background: #ccc; /* Fall-back for browsers that don't support rgba */
+	background: rgba(255, 255, 255, .3);	
 }
 
 .required
@@ -46,11 +44,10 @@ select
 	color:#283c4f;
 	border: 0px;
 	padding-left: 10px;
-	background: rgb(150, 150, 150); /* Fall-back for browsers that don't support rgba */
+	background: #ccc; /* Fall-back for browsers that don't support rgba */
 	background: rgba(255, 255, 255, .3);
 	border-left: 3px solid #335177;
 }
-
 
 .button
 {
@@ -61,12 +58,17 @@ select
 	text-align: center;
 	cursor: pointer;
 	padding: 0px;
-	
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
+	/* ...and now for the proper property */
+	transition:.5s;
 }
 
 .button:hover
 {
-	background-color: gray;
+	background-color: #283c4f;;
 }
 
 .opcao

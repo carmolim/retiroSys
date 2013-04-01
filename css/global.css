@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab);
+
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
 -------------------------------------------------------------- */
 
@@ -17,25 +19,15 @@ table, caption, tbody, tfoot, thead, tr, th, td
 	padding: 0;
 	vertical-align: baseline;
 	font-weight: normal;
-}
-
+}			
 
 body
 {
-
 	color:#283c4f;
-	font: .8em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-	background: url(../img/background.jpg) no-repeat center #8fb0cf;
+	font: .8em  Arial, Helvetica, Geneva, sans-serif;
+	background: url(../img/background.jpg) center #8fb0cf;
 	background-position: top;
 	background-attachment:fixed;
-	
-	/*
-	color: white;
-	//background-size: 2240px 1400px;
-	font: .8em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-
-	background-position: top;
-	*/
 }
 
 hr
@@ -62,12 +54,32 @@ h2
 	font-weight: 600;
 }
 
+h3
+{	
+	color: white;
+	font-size: 1.4em;
+	font-family: 'Josefin Slab', sans-serif;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: 12px;
+}
 
+p
+{
+	margin-bottom: 8px;
+}
 
 a
 {
 	text-decoration: none;
-	color: #40617f;;
+	color: #40617f;
+
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
+	/* ...and now for the proper property */
+	transition:.5s;
 }
 
 a:hover
@@ -76,8 +88,29 @@ a:hover
 	text-decoration: none;	
 }
 
+ul
+{
+	list-style:none;
+}
+
+li
+{
+	margin-bottom: 4px;
+}
+
 .center
 {	
-	text-align: center;
+	width: 150px;
+	text-align: center;	
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 18px;
+	padding-bottom: 18px;
+	clear: both;
+}
+
+.clear
+{				
+	clear: both;
 }
 
