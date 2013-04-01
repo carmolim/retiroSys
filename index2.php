@@ -424,8 +424,7 @@
 
 				<div id="contato" class="pagina">
 					  
-					<iframe width="900" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?msa=0&amp;msid=206585737064468343896.0004bd93415213cffaf4f&amp;ie=UTF8&amp;t=h&amp;ll=-25.222658,-49.152025&amp;spn=0,0&amp;output=embed"></iframe>
-
+					<iframe width="900" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.br/maps/ms?msa=0&amp;msid=206585737064468343896.0004bd93415213cffaf4f&amp;ie=UTF8&amp;t=h&amp;ll=-25.222656,-49.152027&amp;spn=0.002426,0.009645&amp;z=17&amp;output=embed"></iframe>
 			        <div class="page-content">
 				        <div class="col-1">
 						  <h3>Localização</h3>
