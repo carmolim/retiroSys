@@ -4,7 +4,6 @@
 		<title>Bom Retiro de Inverno</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">		
 
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta property="fb:admins" content="1063748681"/>
 		<meta property="og:title" content="Bom Retiro de Inverno"/>
 		<meta property="og:type" content="cause"/>
@@ -40,7 +39,6 @@
 				padding: 30px;				
 				margin-bottom: 18px;
 				text-align: center;
-				/* background-color: rgba(255, 255, 255, 0.2);	*/
 			}
 
 			#navbar
@@ -288,8 +286,8 @@
 						<div class="col-2">
 						  <h3>Castelli di Palma</h3>
 						   <p>
-						      A data? Do dia<a href="https://www.facebook.com/events/138217659685176/" target="_blank" > 29/05 ao 02/06</a>. 
-						      Teremos a presença do <a href="https://www.facebook.com/joniroger.oliveira" target="_blank">Pr. Joni Roger</a>, um pastor  super jovem e com a nossa cara, cuidando da parte espiritual. 
+						      A data? Do dia<a href="https://www.facebook.com/events/138217659685176/" target="_blank">29/05 ao 02/06</a>. 
+						      Teremos a presença do <a href="https://www.facebook.com/joniroger.oliveira" target="_blank">Pr. Joni Roger</a>, um pastor super jovem e com a nossa cara, cuidando da parte espiritual. 
 						      E quer falar de coisa boa? Tem janta na quarta!
 						    </p>
 						   <p>             
@@ -490,10 +488,8 @@
 			</div>
 			<!-- fim das páginas -->			
 		</div>
-
-		<div class="center">
-				bomretirodeinverno ©		
-				
+			<div class="center">
+				bomretirodeinverno ©				
 			</div>				
 		</div>
 		<!-- fim do site -->		
