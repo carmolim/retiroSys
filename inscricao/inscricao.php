@@ -630,7 +630,7 @@
 	         
 	            //echo $formcontent;
 	            // pessoas que não receber os emails
-	            $recipient = "carmolim@gmail.com, jonatashille@gmail.com";
+	            $recipient = "carmolim@gmail.com, jonatashille@gmail.com, lu.degraf@hotmail.com, kaminskao@hotmail.com ";
 	            // assunto do email
 	            $subject = "Mais um inscrito...";	            
 	            // remetente

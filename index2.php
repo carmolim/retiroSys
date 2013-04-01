@@ -55,7 +55,7 @@
 				text-transform: uppercase;
 				padding: 10px;
 				float: left;
-				margin-right: 10px;
+				margin-right: 9px;
 				background: #ccc;
 				background-color: rgba(51, 81, 119, 0.5);	
 				cursor: pointer;
@@ -281,19 +281,19 @@
 						  </p>
 						   
 						   <p>
-						      Serão três dias de muita diversão, cantorias, e principalmente comunhão com Deus! Com muitas novidades e surpresas, juntamos tudo isso em um lugar só e preparamos esse Retiro de Inverno 2012 especialmente para vocês.
+						      Serão três dias de muita diversão, cantorias, e principalmente comunhão com Deus! Com muitas novidades e surpresas, juntamos tudo isso em um lugar só e preparamos esse Retiro de Inverno 2013 especialmente para vocês.
 						   </p>
 						</div>
 						          
 						<div class="col-2">
 						  <h3>Castelli di Palma</h3>
 						   <p>
-						      A data? Do dia<a href="https://www.facebook.com/events/138217659685176/" target="_blank" > 19/05 ao 02/06</a>. 
-						      Teremos a presença do <a href="https://www.facebook.com/joniroger.oliveira" target="_blank" >Pr. Joni Roger</a>, um pastor  super jovem e com a nossa cara, cuidando da parte espiritual. 
+						      A data? Do dia<a href="https://www.facebook.com/events/138217659685176/" target="_blank" > 29/05 ao 02/06</a>. 
+						      Teremos a presença do <a href="https://www.facebook.com/joniroger.oliveira" target="_blank">Pr. Joni Roger</a>, um pastor  super jovem e com a nossa cara, cuidando da parte espiritual. 
 						      E quer falar de coisa boa? Tem janta na quarta!
 						    </p>
 						   <p>             
-						      O Acampamento será realizado no <a href="http://www.castellidipalma.com.br/" target="_blank" >Castelli di Palma</a>, ou o famoso ‘Castelinho’, em Bocaiúva do Sul, mais ou menos 30km do centro de Curitiba.
+						      O Acampamento será realizado no <a href="http://www.castellidipalma.com.br/" target="_blank">Castelli di Palma</a>, ou o famoso ‘Castelinho’, em Bocaiúva do Sul, mais ou menos 30km do centro de Curitiba.
 						    </p>
 						</div>
 						                
@@ -396,7 +396,7 @@
 					    Se você já fez sua inscrição e quer fazer alguma alteração, ou verificar como está a situação do seu pagamento, por favor faça o login ao lado.
 					  </p>					 
 					   </br>
-					   <input onClick="parent.location='/inscricao/inscricao.php'" value="Inscreva-se" class="button">
+					   <input onClick="parent.location='inscricao/inscricao.php'" value="Inscreva-se" class="button">
 					  
 					</div>
 
@@ -416,7 +416,7 @@
 								<br />
 								<input type="submit" name="submit" value="Entrar" class="button">
 								
-								<a href="esqueci_senha.php"> Esqueci minha senha</a>
+								<a href="inscricao/esqueci_senha.php"> Esqueci minha senha</a>
 						</form>			
 					</div>
 				</div>
