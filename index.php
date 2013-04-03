@@ -21,7 +21,7 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.countdown.js"></script>
 		<script type="text/javascript" src="js/jquery.validate.js"></script>	
-		<script src="js/jquery.orbit-1.2.3.min.js" type="text/javascript" ></script>
+		<script type="text/javascript" src="js/jquery.orbit-1.2.3.min.js" ></script>
 
 
 		<style type="text/css">
@@ -157,7 +157,7 @@
 			});  			
 		</script>
 
-		<!--Começo do Analytics
+		<!--Começo do Analytics-->
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-38536788-1']);
@@ -169,7 +169,7 @@
 		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  })();	
 		</script>
-		Fim do Analytics-->
+		<!-- Fim do Analytics-->
 		
 		<!--Contagem regressiva-->		
 		<script type="text/javascript">
@@ -257,8 +257,7 @@
 			<div id="defaultCountdown"></div>		
 			<a href="/inscricao/inscricao.php" class="inscrevase">Inscreva-se!</a>
 			<div class="fb-like" data-href="https://www.facebook.com/BomRetiroDeInverno" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>	
-			<!-- <input onClick="parent.location='/inscricao/inscricao.php'" value="Inscreva-se!" class="navButton"> -->
-		
+			
 
 			<div id="paginas">
 				<div id="home" class="pagina">
@@ -271,37 +270,36 @@
 
 			        <div class="page-content">
 			        	<div class="col-1">
-						  <h3>Único feriado do ano!</h3>
-						  <p>
-							 Pessoal! Férias de julho e você não tem o que fazer?
-							 Está sem planos para os finais de semana?
-							 Se você é daqueles que acredita que retiro da igreja é só no "carnaval!", aqui está a solução!
-						  </p>
-						   
-						   <p>
-						      Serão três dias de muita diversão, cantorias, e principalmente comunhão com Deus! Com muitas novidades e surpresas, juntamos tudo isso em um lugar só e preparamos esse Retiro de Inverno 2013 especialmente para vocês.
-						   </p>
+							<h3>Único feriado do ano!</h3>
+							<p>
+								Que tal passar o feriado de Corpus Christi num castelo?	A segunda edição do nosso retiro de inverno está cheia de novidades e você não pode perder!
+							</p>
+							<p>
+								Neste ano de 2013 teremos 5 dias de programação, com muita comida, amizade, comunhão com Deus e um tanto de frio, para nos unir nesse clima cristão e aquecer os nossos corações com muito amor.
+							</p>					   
 						</div>
 						          
 						<div class="col-2">
-						  <h3>Castelli di Palma</h3>
-						   <p>
-						      A data? Do dia<a href="https://www.facebook.com/events/138217659685176/" target="_blank">29/05 ao 02/06</a>. 
-						      Teremos a presença do <a href="https://www.facebook.com/joniroger.oliveira" target="_blank">Pr. Joni Roger</a>, um pastor super jovem e com a nossa cara, cuidando da parte espiritual. 
-						      E quer falar de coisa boa? Tem janta na quarta!
-						    </p>
-						   <p>             
-						      O Acampamento será realizado no <a href="http://www.castellidipalma.com.br/" target="_blank">Castelli di Palma</a>, ou o famoso ‘Castelinho’, em Bocaiúva do Sul, mais ou menos 30km do centro de Curitiba.
-						    </p>
+							<h3>Castelli di Palma</h3>
+							<p>
+								O <a href="https://www.facebook.com/BomRetiroDeInverno" target="_blank">Bom Retiro de Inverno</a> 2013 vai acontecer dos dias <a href="https://www.facebook.com/events/138217659685176/" target="_blank">29/05 à 02/06</a>.
+								Para dirigir a nossa programação, contamos com a participação de
+								convidados muito especiais! Teremos a presença do <a href="https://www.facebook.com/joniroger.oliveira" target="_blank">Pr. Joni Roger</a>,
+								que estará cuidando da parte espiritual do nosso encontro, e o <a href="https://www.facebook.com/grupo7mus" target="_blank">Grupo 7MUS</a>, dirigido por <a href="https://www.facebook.com/jader.d.santos" target="_blank">Jader Santos</a>, que você já conhece, né? Então não vou falar nada...
+							</p>
+
+							<p>
+								O Acampamento será realizado no <a href="http://www.castellidipalma.com.br/" target="_blank"> Castelli di Palma</a>, ou o famoso ‘Castelinho’, em Bocaiúva do Sul que fica mais ou menos 30km do centro de Curitiba.
+							</p>
 						</div>
 						                
 						<div class="col-3"> 
 						  <h3>Caraca! Um Castelo!?</h3>
 						  <p>
-						    	Tem piscina aquecida, campo de futebol, mesa de sinuca, quadra poliesportiva, quadras de areia, trilha ecológica,  chalés (não, não precisa ficar em barraca!!!), auditório e uma comidinha delicia! Você não vai perder uma dessas, né?
+						    	Tem piscina aquecida, campo de futebol, mesa de sinuca, quadra poliesportiva, quadras de areia, trilha ecológica, chalés (não, não precisa ficar em barraca!!!) e uma comidinha delícia! Você não vai perder uma dessas, né?
 						  </p>
 						  <p>
-						   		O investimento é uma bagatela! Você pode ter tudo isso por apenas R$ 270. Faça sua inscrição e escolha a forma de pagamento que você preferir, depósito, transferência e PagSeguro.
+						   		Você pode ter tudo isso por apenas R$ 270. Faça sua <a href="inscricao/inscricao.php">inscrição</a> e escolha a forma de pagamento que você preferir, depósito, transferência ou PagSeguro.
 						  </p>
 						</div>
 					</div>
@@ -309,36 +307,41 @@
 				<!-- fim da home -->
 
 				<div id="programacao" class="pagina">
-					<div class="col">
+					<div style="float: left;">
+						 	Nossa programação está tão boa que está difícil de encaixar aqui! Volte em breve para conferir...
+						 	<br>
+						 	<br>
+						 	<br>
+					</div>
+				
+					<div class="col" style="clear: both;">
 					  <h3>Quarta 19/05</h3>
-					  <ul class="list1">
+					<!--   <ul class="list1">
 					   		<li><span>16:00</span> - Chegada</li>
 					   		<li><span>19:00</span> - Janta</li>
 					    	<li><span>20:30</span> - Mensagem - Pr. Joni</li>
 					    	<li><span>23:30</span> - Dormir</li>
-					  </ul>
+					  </ul> -->
 					</div>
 
 					<div class="col">
 					  <h3>Quinta 30/05</h3>
-					  <ul>
-					  <li><span>07:30</span> - Desjejum</li>
-					  <li><span>09:00</span> - Mensagem - Pr. Joni</li>
-					  <li><span>10:00</span> - Esportes</li>
-					  <li><span>12:15</span> - Almoço</li>
-					  <li><span>13:15</span> - Livre </li>
-					  <li><span>15:00</span> - Encerramento</li>
-					  <li><span>16:00</span> - Lanche</li>
-					  <li><span>17:15</span> - Livre </li>
-					  <li><span>19:00</span> - Saída</li>
-					  
-
-					  </ul>
+					 <!--  <ul>
+						  <li><span>07:30</span> - Desjejum</li>
+						  <li><span>09:00</span> - Mensagem - Pr. Joni</li>
+						  <li><span>10:00</span> - Esportes</li>
+						  <li><span>12:15</span> - Almoço</li>
+						  <li><span>13:15</span> - Livre </li>
+						  <li><span>15:00</span> - Encerramento</li>
+						  <li><span>16:00</span> - Lanche</li>
+						  <li><span>17:15</span> - Livre </li>
+						  <li><span>19:00</span> - Saída</li>
+					  </ul> -->
 					</div>
 
 					<div class="col">
 					  <h3>Sexta 31/05</h3>
-					  <ul>
+					 <!--  <ul>
 					    <li><span>07:30</span> - Desjejum</li>
 					    <li><span>09:00</span> - Mensagem - Pr. Joni</li>
 					    <li><span>10:00</span> - Esportes</li>
@@ -348,12 +351,12 @@
 					    <li><span>16:00</span> - Lanche</li>
 					    <li><span>17:15</span> - Livre </li>
 					    <li><span>19:00</span> - Saída</li>
-					  </ul>
+					  </ul> -->
 					</div>
 					
 					<div class="col">
 					  <h3>Sábado 01/06</h3>
-					  <ul>
+					 <!--  <ul>
 						  <li><span>07:30</span> - Desjejum</li>
 						  <li><span>09:15</span> - Culto - Pr. Joni</li>
 						  <li><span>10:45</span> - Escola Sabatina</li>
@@ -364,12 +367,12 @@
 						  <li><span>21:00</span> - Livre</li>
 						  <li><span>22:00</span> - Lanche</li>
 						  <li><span>00:00</span> - Dormir</li>					
-					  </ul>
+					  </ul> -->
 					</div>
 					
 					<div class="col">
 					  <h3>Domingo 02/06</h3>
-					  <ul>
+					 <!--  <ul>
 						   <li><span>07:30</span> - Desjejum</li>
 						   <li><span>09:00</span> - Mensagem - Pr. Joni</li>
 						   <li><span>10:00</span> - Esportes</li>
@@ -379,8 +382,10 @@
 						   <li><span>16:00</span> - Lanche</li>
 						   <li><span>17:15</span> - Livre </li>
 						   <li><span>19:00</span> - Saída</li>
-					  </ul>
+					  </ul> -->
 					</div>
+
+					
 				</div>
 				<!-- fim da programaçao -->
 
@@ -427,11 +432,12 @@
 				        <div class="col-1">
 						  <h3>Localização</h3>
 						  <p>
-						  		O Acampamento será realizado no Castelli di Palma, ou o famoso ‘Castelinho’, em Bocaiúva do Sul, mais ou menos 30km do centro de Curitiba.
+						  		Se você não foi no ano passado, ou não sem lembra de como chegar lá, não se preocupe, aqui em cima tem um mapa para você!
+						  		O "castelinho" fica em Bocaiúva do Sul cerca de uns 30 km do centro de Curitiba.
 						  </p>
-						  <h4>GPS</h4>
+						  
 						  <p>
-						  		Se você quiser baixe os arquivos com o local do acampamento para o seu GPS.
+						  		Se você é uma pessoa tecnológica, você pode baixar arquivo de sua preferência e transferir para o seu GPS ou então clique <a href="https://maps.google.com.br/maps/ms?msa=0&msid=206585737064468343896.0004bd93415213cffaf4f&ie=UTF8&t=h&ll=-25.221278,-49.151019&spn=0.002427,0.009656&z=17&vpsrc=6&iwloc=0004bd9343d83d819d50c&f=d&daddr=Ch%C3%A1cara+da+Ben%C3%A7%C3%A3o+%40-25.222658,-49.152025"> aqui</a> para abrir com o seu smartphone.
 						  </p>
 						  	<a href="https://bitly.com/castelinho_gpx">
 						  		<img src="img/gpx.png" alt="gpx" width="36" height="36" />
@@ -447,40 +453,39 @@
 						  		Caso tenha alguma problema com a inscrição, ou tenha qualquer dúvida a respeito do acampamento entre em contato com: 
 						  </p>						 
 						  <p>
-						    <a class="nome" href="http://www.facebook.com/gabriel.kaminski.5" target="_blank">Gabriel Kaminski</a>
-						    <br />
-						    <a href="mailto:kaminskao@hotmail.com?subject=Contato Acampamento">kaminskao@hotmail.com</a>
-						    <br />
-						    <span class="phone">41 8416.2559</span><br />
-						  </p>
-						  <!--  
+							    <a class="nome" href="http://www.facebook.com/gabriel.kaminski.5" target="_blank">Gabriel Kaminski</a>
+							    <br />
+							    <a href="mailto:kaminskao@hotmail.com?subject=Contato Acampamento">kaminskao@hotmail.com</a>
+							    <br />
+							    <span class="phone">41 8416.2559</span><br />
+						  </p>						  
 						  <p>
-						    <a href="http://www.facebook.com/muri.o.alves" target="_blank">Murilo Alves</a><br />
-						    <a href="mailto:muri.o.alves@gmail.com?subject=Contato Acampamento">muri.o.alves@gmail.com</a> <br />
-						    <span class="phone">41 9664.3486</span>
-						  </p>
-						  -->
+							    <a href="http://www.facebook.com/muri.o.alves" target="_blank">Murilo Alves</a><br />
+							    <a href="mailto:muri.o.alves@gmail.com?subject=Contato Acampamento">muri.o.alves@gmail.com</a> <br />
+							    <span class="phone">41 9664.3486</span>
+						  </p>						  
 						</div>
 
 						<div class="col-3">
-						  <h3>Inscrições</h3>
+						  <h3>Inscrições</h3>					  
+
+						  	 <p>
+							    <a href="http://www.facebook.com/luana.degraf">Luana Degraf</a>
+							    <br />
+							    <a href="mailto:lu.degraf@hotmail.com?subject=Contato Acampamento">lu.degraf@hotmail.com</a>
+							    <br />
+							    41 8411.7217	
+						  </p>
 						  <p>
-						    <a href="http://www.facebook.com/carmolim" target="_blank">Augusto Carmo</a>
-						    <br />
-						    <a href="mailto:carmolim@gmail.com?subject=Contato Acampamento">carmolim@gmail.com</a>
-						    <br />
-						    <span class="phone">41 9968.6287</span>
-						    <a href="mailto:carmolim@gmail.com?subject=Contato Acampamento"></a>
+							    <a href="http://www.facebook.com/carmolim" target="_blank">Augusto Carmo</a>
+							    <br />
+							    <a href="mailto:carmolim@gmail.com?subject=Contato Acampamento">carmolim@gmail.com</a>
+							    <br />
+							   	41 9968.6287
+							    <a href="mailto:carmolim@gmail.com?subject=Contato Acampamento"></a>
 						  </p>
 
-						  <p>
-						    <a href="http://www.facebook.com/luana.degraf">Luana Degraf</a>
-						    <br />
-						    <a href="mailto:lu.degraf@hotmail.com?subject=Contato Acampamento">lu.degraf@hotmail.com</a>
-						    <br />
-						    <span class="phone">41 8411.7217</span>
-						    <br />
-						  </p>
+					
 						</div>
 			        </div>  
 				</div>
