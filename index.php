@@ -1,8 +1,11 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 	<head>
-		<title>Bom Retiro de Inverno</title>
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">		
+		<title>Bom Retiro de Inverno - No Limite da Graça</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">	
+
+		<meta name="description" content="Do dia 29/05 ao 02/06 acontecerá a segunda edição do Bom Retiro de Inverno, com a presença do Pr. Joni Roger de Oliveira e do Grupo 7MUS, dirigido por Jader Santos cuidando do nosso louvor! Com certeza será um Bom Retiro! :)">
+	
 
 		<meta property="fb:admins" content="1063748681"/>
 		<meta property="og:title" content="Bom Retiro de Inverno"/>
@@ -282,8 +285,8 @@
 						<div class="col-2">
 							<h3>Castelli di Palma</h3>
 							<p>
-								O <a href="https://www.facebook.com/BomRetiroDeInverno" target="_blank">Bom Retiro de Inverno</a> 2013 vai acontecer dos dias <a href="https://www.facebook.com/events/138217659685176/" target="_blank">29/05 à 02/06</a>.
-								Para dirigir a nossa programação, contamos com a participação de
+								O <a href="https://www.facebook.com/BomRetiroDeInverno" target="_blank">Bom Retiro de Inverno</a> 2013 vai acontecer dos dias <a href="https://www.facebook.com/events/138217659685176/" target="_blank">29/05 a 02/06</a>.
+								Para dirigir a nossa programação contamos com a participação de
 								convidados muito especiais! Teremos a presença do <a href="https://www.facebook.com/joniroger.oliveira" target="_blank">Pr. Joni Roger</a>,
 								que estará cuidando da parte espiritual do nosso encontro, e o <a href="https://www.facebook.com/grupo7mus" target="_blank">Grupo 7MUS</a>, dirigido por <a href="https://www.facebook.com/jader.d.santos" target="_blank">Jader Santos</a>, que você já conhece, né? Então não vou falar nada...
 							</p>
@@ -315,7 +318,7 @@
 					</div>
 				
 					<div class="col" style="clear: both;">
-					  <h3>Quarta 19/05</h3>
+					  <h3>Quarta 29/05</h3>
 					<!--   <ul class="list1">
 					   		<li><span>16:00</span> - Chegada</li>
 					   		<li><span>19:00</span> - Janta</li>
@@ -472,7 +475,7 @@
 						  	 <p>
 							    <a href="http://www.facebook.com/luana.degraf">Luana Degraf</a>
 							    <br />
-							    <a href="mailto:lu.degraf@hotmail.com?subject=Contato Acampamento">lu.degraf@hotmail.com</a>
+							    <a href="mailto:lu_degraf@hotmail.com?subject=Contato Acampamento">lu_degraf@hotmail.com</a>
 							    <br />
 							    41 8411.7217	
 						  </p>
