@@ -464,7 +464,7 @@
                             <br />
                             <input name="forma_pagto" type="radio" id="pagseguro" value="pagseguro" onclick="styleToggle(this)"/>
                             <br />
-                            PagSeguro R$ 285,00*
+                            PagSeguro R$ 295,00*
                             <br />
                             até 10x (com juros)
                             <br />
@@ -745,7 +745,7 @@
 						<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
 						<form target="pagseguro" action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
 							<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
-							<input type="hidden" name="code" value="4A075401EFEFF91224810F95EF3E6A71" />
+							<input type="hidden" name="code" value="9F2490934D4D88788400AFACCAC959D8" />
 							<input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/99x61-comprar-azul-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
 						</form>
 						<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->

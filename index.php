@@ -311,7 +311,7 @@
 
 				<div id="programacao" class="pagina">
 					<div style="float: left;">
-						 	Nossa programação está tão boa que está difícil de encaixar aqui! Volte em breve para conferir...
+						 	<!-- Nossa programação está tão boa que está difícil de encaixar aqui! Volte em breve para conferir... -->
 						 	<br>
 						 	<br>
 						 	<br>
@@ -319,73 +319,76 @@
 				
 					<div class="col" style="clear: both;">
 					  <h3>Quarta 29/05</h3>
-					<!--   <ul class="list1">
+					   <ul class="list1">
 					   		<li><span>16:00</span> - Chegada</li>
-					   		<li><span>19:00</span> - Janta</li>
-					    	<li><span>20:30</span> - Mensagem - Pr. Joni</li>
+					   		<li><span>19:00</span> - Luau / Janta</li>
+					    	<li><span>20:30</span> - Pr. Joni</li>
 					    	<li><span>23:30</span> - Dormir</li>
-					  </ul> -->
+					  </ul> 
 					</div>
 
 					<div class="col">
 					  <h3>Quinta 30/05</h3>
-					 <!--  <ul>
+					   <ul>
 						  <li><span>07:30</span> - Desjejum</li>
-						  <li><span>09:00</span> - Mensagem - Pr. Joni</li>
-						  <li><span>10:00</span> - Esportes</li>
-						  <li><span>12:15</span> - Almoço</li>
-						  <li><span>13:15</span> - Livre </li>
-						  <li><span>15:00</span> - Encerramento</li>
+						  <li><span>09:00</span> - Pr. Joni</li>
+						  <li><span>10:30</span> - Esportes</li>
+						  <li><span>12:30</span> - Almoço</li>
+						  <li><span>14:00</span> - Bate-Papos</li>
+						  <li><span>15:00</span> - X-GAMES</li>
 						  <li><span>16:00</span> - Lanche</li>
 						  <li><span>17:15</span> - Livre </li>
-						  <li><span>19:00</span> - Saída</li>
-					  </ul> -->
+						  <li><span>19:00</span> - Janta</li>
+						  <li><span>20:30</span> - Surpresa!!</li>
+						  <li><span>22:30</span> - Pr. Joni</li>
+						  <li><span>23:30</span> - Dormir</li>
+					  </ul> 
 					</div>
 
 					<div class="col">
 					  <h3>Sexta 31/05</h3>
-					 <!--  <ul>
-					    <li><span>07:30</span> - Desjejum</li>
-					    <li><span>09:00</span> - Mensagem - Pr. Joni</li>
-					    <li><span>10:00</span> - Esportes</li>
-					    <li><span>12:15</span> - Almoço</li>
-					    <li><span>13:15</span> - Livre </li>
-					    <li><span>15:00</span> - Encerramento</li>
-					    <li><span>16:00</span> - Lanche</li>
-					    <li><span>17:15</span> - Livre </li>
-					    <li><span>19:00</span> - Saída</li>
-					  </ul> -->
+					   <ul>
+						  <li><span>07:30</span> - Desjejum</li>
+						  <li><span>09:00</span> - Pr. Joni</li>
+						  <li><span>10:30</span> - Esportes</li>
+						  <li><span>12:30</span> - Almoço</li>
+						  <li><span>14:00</span> - Bate-Papos</li>
+						  <li><span>15:00</span> - X-GAMES</li>
+						  <li><span>16:00</span> - Lanche</li>
+						  <li><span>17:15</span> - Pôr-do-sol </li>
+						  <li><span>19:00</span> - Janta</li>
+						  <li><span>20:30</span> - Pr. Joni</li>
+						  <li><span>23:30</span> - Dormir</li>
+					  </ul>
 					</div>
 					
 					<div class="col">
 					  <h3>Sábado 01/06</h3>
-					 <!--  <ul>
-						  <li><span>07:30</span> - Desjejum</li>
-						  <li><span>09:15</span> - Culto - Pr. Joni</li>
-						  <li><span>10:45</span> - Escola Sabatina</li>
-						  <li><span>12:15</span> - Almoço</li>
-						  <li><span>13:15</span> - Livre </li>
-						  <li><span>16:00</span> - J.A.</li>
-						  <li><span>19:00</span> - Festa .N.E.R.D.</li>
-						  <li><span>21:00</span> - Livre</li>
-						  <li><span>22:00</span> - Lanche</li>
-						  <li><span>00:00</span> - Dormir</li>					
-					  </ul> -->
-					</div>
+					   <ul>
+				  		  <li><span>07:30</span> - Desjejum</li>
+						  <li><span>09:00</span> - Culto - Pr. Joni</li>
+						  <li><span>10:30</span> - Escola Sabatina</li>
+						  <li><span>12:30</span> - Almoço</li>
+						  <li><span>14:00</span> - Bate-Papos</li>
+						  <li><span>15:00</span> - Livre</li>
+						  <li><span>16:30</span> - Jader e 7MUS</li>
+						  <li><span>17:15</span> - Pôr-do-sol </li>
+						  <li><span>19:00</span> - Festa: CIRCO</li>
+						  <li><span>23:30</span> - Dormir</li>				
+					  </ul> 					</div>
 					
 					<div class="col">
 					  <h3>Domingo 02/06</h3>
-					 <!--  <ul>
-						   <li><span>07:30</span> - Desjejum</li>
-						   <li><span>09:00</span> - Mensagem - Pr. Joni</li>
-						   <li><span>10:00</span> - Esportes</li>
-						   <li><span>12:15</span> - Almoço</li>
-						   <li><span>13:15</span> - Livre </li>
-						   <li><span>15:00</span> - Encerramento</li>
-						   <li><span>16:00</span> - Lanche</li>
-						   <li><span>17:15</span> - Livre </li>
-						   <li><span>19:00</span> - Saída</li>
-					  </ul> -->
+					 
+					   <ul>
+						  <li><span>07:30</span> - Desjejum</li>
+						  <li><span>09:00</span> - Mensagem - Pr. Joni</li>
+						  <li><span>10:30</span> - Esportes</li>
+						  <li><span>12:30</span> - Almoço</li>
+						  <li><span>14:00</span> - Bate-Papos</li>
+						  <li><span>15:00</span> - Encerramento</li>
+						  <li><span>16:00</span> - Saída</li>
+					  </ul> 
 					</div>
 
 					
